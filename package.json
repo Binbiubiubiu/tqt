@@ -1,0 +1,57 @@
+{
+  "name": "tqt",
+  "version": "1.0.0",
+  "description": "tb-mini & qn-mini & taro",
+  "author": "Binbiubiubiu <2632003786@qq.com>",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "rome ci .",
+    "format": "rome format --write . && prettier --write .",
+    "prepare": "husky install",
+    "changesets": "changesets",
+    "release": "pnpm build && changeset publish",
+    "publish-packages": "pnpm build && changeset version && changeset publish"
+  },
+  "keywords": [
+    "taro",
+    "taobao",
+    "platform-plugin",
+    "mini-program"
+  ],
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "rome check",
+      "rome format --write"
+    ],
+    "*.{json,md,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "packageManager": "pnpm@7.27.0",
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.0",
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "esno": "^0.16.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.8.4",
+    "rome": "^11.0.0",
+    "tsup": "^6.6.3",
+    "turbo": "^1.8.3",
+    "typescript": "^4.0.3"
+  },
+  "license": "MIT",
+  "repository": "git+https://github.com/Binbiubiubiu/tqtjs.git",
+  "bugs": {
+    "url": "https://github.com/Binbiubiubiu/tqtjs/issues"
+  },
+  "homepage": "https://github.com/Binbiubiubiu/tqtjs#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}

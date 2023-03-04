@@ -1,0 +1,41 @@
+{
+  "name": "@tqtjs/shared",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "some tools",
+  "author": "Binbiubiubiu <2632003786@qq.com>",
+  "license": "MIT",
+  "keywords": [
+    "tqtjs",
+    "utils",
+    "helper"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./*"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch src"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": "git+https://github.com/Binbiubiubiu/tqtjs.git",
+  "bugs": {
+    "url": "https://github.com/Binbiubiubiu/tqtjs/issues"
+  },
+  "homepage": "https://github.com/Binbiubiubiu/tqtjs#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}

@@ -1,0 +1,17 @@
+export const needPromiseSfcApis = new Set([
+  "navigateToWebPage",
+  "navigateToQAP",
+  "closeQAP",
+  "switchTabEx",
+  "queryDBSize",
+  "chooseFile",
+  "chooseFileAndGetContent",
+  "saveFileToDisk",
+  "cleanToken",
+  "showSubAccountAuth",
+  "openChat",
+  "imGetActiveUser",
+  "openPlugin",
+  "openCategory",
+  "changePrice",
+]);
