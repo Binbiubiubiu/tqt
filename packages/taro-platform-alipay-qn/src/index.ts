@@ -1,15 +1,15 @@
 import type { IPluginContext } from "@tarojs/service";
 import { isString } from "@tarojs/shared";
-import TB, { RUNATIME_PATH } from "./program";
+import QN, { RUNATIME_PATH } from "./program";
 
 let registeredModifyPageTemplate = false;
 export default (ctx: IPluginContext) => {
   ctx.registerPlatform({
-    name: "tb",
+    name: "qn",
     useConfigName: "mini",
     async fn({ config }) {
       !registeredModifyPageTemplate && modifyPageTemplate(ctx);
-      const program = new TB(ctx, config);
+      const program = new QN(ctx, config);
       await program.start();
     },
   });

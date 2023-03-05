@@ -50,19 +50,19 @@ declare module "@tarojs/taro" {
   interface tb {
     /**
      * 关注店铺
-     * @基础库最低版本 8.11.0
+     *
      */
     favorShop(option: tb.favorShop.Option): Promise<TqtGeneral.CallbackResult>;
     /**
      * 查询店铺关注状态
-     * @基础库最低版本 8.11.0
+     *
      */
     checkShopFavoredStatus(
       option: tb.checkShopFavoredStatus.Option,
     ): Promise<tb.checkShopFavoredStatus.SuccessCallbackResult>;
     /**
      * 取消关注店铺
-     * @基础库最低版本 8.11.0
+     *
      */
     unFavorShop(option: tb.unFavorShop.Option): Promise<TqtGeneral.CallbackResult>;
   }

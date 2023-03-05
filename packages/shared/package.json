@@ -16,9 +16,17 @@
   "typesVersions": {
     "*": {
       "*": [
-        "./*"
+        "./*",
+        "./dist/*"
       ]
     }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": "./dist/*"
   },
   "files": [
     "dist"
@@ -27,8 +35,9 @@
     "build": "tsup",
     "dev": "tsup --watch src"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "ts-expect": "^1.3.0"
+  },
   "repository": "git+https://github.com/Binbiubiubiu/tqtjs.git",
   "bugs": {
     "url": "https://github.com/Binbiubiubiu/tqtjs/issues"

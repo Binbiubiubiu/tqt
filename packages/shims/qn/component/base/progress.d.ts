@@ -1,19 +1,20 @@
 declare module "@tarojs/components" {
   import type { ComponentType } from "react";
-  interface ProgressProps {
+  import type { ProgressProps as OldProps } from "@tarojs/components/types/Progress";
+  interface ProgressProps extends OldProps {
     /**
      * 尺寸；可选值: `small`, `medium`, `large`
-     * @defaultValue `medium`
+     * @default `medium`
      */
     size?: "small" | "medium" | "large";
     /**
      * 形态；可选值: `circle`, `line`
-     * @defaultValue `line`
+     * @default `line`
      */
     shape?: "circle" | "line";
     /**
      * 所占百分比
-     * @defaultValue 0
+     * @default 0
      */
     percent?: number;
     /**
@@ -31,11 +32,11 @@ declare module "@tarojs/components" {
     /**
      * 进度条颜色, 显示优先级: `color` > `progressive` > `state`
      */
-    color?: boolean;
+    color?: string;
     /**
      * 背景色
      */
-    backgroundColor?: boolean;
+    backgroundColor?: string;
   }
   export const Progress: ComponentType<ProgressProps>;
 }

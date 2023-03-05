@@ -31,7 +31,7 @@ declare module "@tarojs/taro" {
     interface Option {
       /**
        * 商品id
-       * @基础库最低版本 8.11.0
+       *
        */
       id: number;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -54,12 +54,12 @@ declare module "@tarojs/taro" {
     interface Option {
       /**
        * 商品id
-       * @基础库最低版本 8.11.0
+       *
        */
       id: number;
       /**
        * 是否打开H5类型的商品详情面
-       * @基础库最低版本 8.11.0
+       *
        */
       forceH5?: boolean;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -82,14 +82,14 @@ declare module "@tarojs/taro" {
     unCollectGoods(option: tb.unCollectGoods.Option): Promise<TqtGeneral.CallbackResult>;
     /**
      * 检查商品是否被收藏
-     * @基础库最低版本 8.11.0
+     *
      */
     checkGoodsCollectedStatus(
       option: tb.checkGoodsCollectedStatus.Option,
     ): Promise<tb.checkGoodsCollectedStatus.SuccessCallbackResult>;
     /**
      * 打开商品详情页
-     * @基础库最低版本 8.11.0
+     *
      */
     openDetail(option: tb.openDetail.Option): Promise<TqtGeneral.CallbackResult>;
   }

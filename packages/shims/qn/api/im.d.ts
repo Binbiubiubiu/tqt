@@ -29,7 +29,7 @@ declare module "@tarojs/taro" {
       /** 接口调用失败的回调函数 */
       fail?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用成功的回调函数 */
-      success?: (result: TqtGeneral.SuccessCallbackResult) => void;
+      success?: (result: SuccessCallbackResult) => void;
     }
 
     interface SuccessCallbackResult extends TqtGeneral.CallbackResult {
@@ -41,13 +41,15 @@ declare module "@tarojs/taro" {
   interface qn {
     /**
      * 打开聊天窗口并输入待发送的信息
-     * @since 7.16.00N
+     *
      */
     openChat(option: qn.openChat.Option): Promise<TqtGeneral.CallbackResult>;
     /**
      * 获取当前IM旺旺联系人
-     * @since 7.12.00N
+
      */
-    imGetActiveUser(option: qn.imGetActiveUser.Option): Promise<TqtGeneral.SuccessCallbackResult>;
+    imGetActiveUser(
+      option: qn.imGetActiveUser.Option,
+    ): Promise<qn.imGetActiveUser.SuccessCallbackResult>;
   }
 }

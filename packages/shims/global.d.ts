@@ -1,4 +1,5 @@
 declare namespace TqtGeneral {
+  type IAnyObject = Record<string, any>;
   interface CallbackResult {
     /** 是否成功 */
     success?: boolean;

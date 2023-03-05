@@ -10,12 +10,12 @@ declare module "@tarojs/taro" {
        * - `orderDetail`（打开订单详情页，9.18.0及以上版）；
        * - `orderList`（打开订单列表页，9.18.0及以上版本）；
        * - `liveRoom`（打开直播间，9.24.0及以上版本）
-       * @基础库最低版本 9.3.0
+       *
        */
       appCode: string;
       /**
        * `appCode` 配套参数，需要和 `appCode` 搭配使用。
-       * @基础库最低版本 9.3.0
+       *
        */
       appParams?: AppParams;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -36,14 +36,14 @@ declare module "@tarojs/taro" {
        * - `wait_to_shipments`: 待发货；
        * - `wait_to_confirm`: 待收货；
        * - `wait_to_evaluate`: 待评价
-       * @基础库最低版本 9.20.0
+       *
        */
       orderListType?: string;
       /**
        * 对应`appCode`需为：`orderDetail`。
        *
        * 当`appCode`为`orderDetail`时，指定订单Id
-       * @基础库最低版本 9.20.0
+       *
        */
       orderId: string;
       /**
@@ -57,7 +57,7 @@ declare module "@tarojs/taro" {
        * - `other` 其它。
        *
        * （不传tabType时，默认打开 优惠券 tab）
-       * @基础库最低版本 9.17.0
+       *
        */
       tabType?: string;
       /**
@@ -66,7 +66,7 @@ declare module "@tarojs/taro" {
        * 店铺顶部的子Tab，支持：
        * - `shopindex`首页（`shopTab`需为`shopindexbar`）
        * - `newitems`：新品（`shopTab`需为`shopindexbar`）
-       * @基础库最低版本 9.3.0
+       *
        */
       weexShopSubTab?: string;
       /**
@@ -78,14 +78,14 @@ declare module "@tarojs/taro" {
        * - `dongtaibar`微淘
        * - `categorybar`分类
        * -` memberbar`会员、
-       * @基础库最低版本 9.3.0
+       *
        */
       weexShopTab?: string;
       /**
        * 对应`appCode`需为：`shop`。
        *
        * 当`appCode`为`shop`时，指定店铺Id
-       * @基础库最低版本 9.3.0
+       *
        */
       shopId: string;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */

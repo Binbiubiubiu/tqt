@@ -30,12 +30,12 @@ declare module "@tarojs/taro" {
     interface Option {
       /**
        * 插槽协议类型，如`shangpinguanli`，`jiaoyiguanli`
-       * @基础库最低版本 7.6.0
+       *
        */
       category?: string;
       /**
        * 页面名称，如`itemList`，`itemDetail`，`tradeList`，`tradeDetail`
-       * @基础库最低版本 7.6.0
+       *
        */
       pageName: string;
       /** 页面参数，JSON的string格式，参数格式见示例 */
@@ -45,7 +45,7 @@ declare module "@tarojs/taro" {
       /** 接口调用失败的回调函数 */
       fail?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用成功的回调函数 */
-      success?: (result: TqtGeneral.SuccessCallbackResult) => void;
+      success?: (result: TqtGeneral.CallbackResult) => void;
     }
   }
 
@@ -60,24 +60,24 @@ declare module "@tarojs/taro" {
       /** 接口调用失败的回调函数 */
       fail?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用成功的回调函数 */
-      success?: (result: TqtGeneral.SuccessCallbackResult) => void;
+      success?: (result: TqtGeneral.CallbackResult) => void;
     }
   }
 
   interface qn {
     /**
      * 打开插件通用API
-     * @since 7.12.00N
+
      */
     openPlugin(option: qn.openPlugin.Option): Promise<TqtGeneral.CallbackResult>;
     /**
      * 打开千牛插件协议槽
-     * @since 7.12.00N
+
      */
     openCategory(option: qn.openCategory.Option): Promise<TqtGeneral.CallbackResult>;
     /**
      * 打开千牛改价格窗口
-     * @since 7.15.00N
+     *
      */
     changePrice(option: qn.changePrice.Option): Promise<TqtGeneral.CallbackResult>;
   }

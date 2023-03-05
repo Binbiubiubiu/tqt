@@ -45,17 +45,17 @@ declare module "@tarojs/taro" {
   interface qn {
     /**
      * 在千牛工作台打开网页
-     * @since 7.16.00N
+     *
      */
     navigateToWebPage(options: qn.navigateToWebPage.Option): Promise<TqtGeneral.CallbackResult>;
     /**
      * 在小程序中唤起插件页面
-     * @since 7.19.00N
+     *
      */
     navigateToQAP(options: qn.navigateToQAP.Option): Promise<TqtGeneral.CallbackResult>;
     /**
      * 关闭由 `Taro.qn.navigateToQAP` 打开的页面
-     * @since 7.32.00N
+     *
      */
     closeQAP(options: qn.closeQAP.Option): Promise<TqtGeneral.CallbackResult>;
   }

@@ -28,7 +28,7 @@ declare module "@tarojs/taro" {
       /** 订阅内容业务域(消息:message) */
       domainKey: string;
       /** 订阅内容资源点 */
-      resourceKeys: Record<string, any>;
+      resourceKeys: TqtGeneral.IAnyObject;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用失败的回调函数 */
@@ -43,7 +43,7 @@ declare module "@tarojs/taro" {
       /** 过期时间 */
       validTime: number;
       /** 授权结果信息 */
-      resourceItems: Record<string, any>;
+      resourceItems: TqtGeneral.IAnyObject;
     }
   }
 

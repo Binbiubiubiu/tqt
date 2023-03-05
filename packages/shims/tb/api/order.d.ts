@@ -18,19 +18,19 @@ declare module "@tarojs/taro" {
       itemid: number;
       /**
        * skuId
-       * @defaultValue -1
+       * @default -1
        */
       skuId?: number;
       /**
        * 下单商品件数
-       * @defaultValue 1
+       * @default 1
        */
       quantity?: number;
       /**
        * 定制信息
-       * @defaultValue {}
+       * @default {}
        */
-      customization?: Record<string, any>;
+      customization?: TqtGeneral.IAnyObject;
     }
   }
 

@@ -11,7 +11,7 @@
         "noDelete": "off"
       }
     },
-    "ignore": ["./dist/*"]
+    "ignore": ["./packages/**/dist/*"]
   },
   "formatter": {
     "enabled": true,
@@ -19,6 +19,6 @@
     "indentStyle": "space",
     "indentSize": 2,
     "lineWidth": 100,
-    "ignore": ["./dist/*"]
+    "ignore": ["./packages/**/dist/*"]
   }
 }

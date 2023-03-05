@@ -7,29 +7,29 @@ declare module "@tarojs/taro" {
       url: string;
       /**
        * HTTP请求类型
-       * @defaultValue GET
+       * @default GET
        */
       method?: string;
       /**
        * 请HTTP头
-       * @defaultValue {'content-type': 'application/json'}
+       * @default {'content-type': 'application/json'}
        */
-      headers?: Record<string, any>;
+      headers?: TqtGeneral.IAnyObject;
       /**
        * 云网关协议参数，`enableSystemParams`表示开启拼接系统参数和签名，`timeout`为HTTP请求超时时间
-       * @defaultValue {'enableSystemParams': true, 'timeout': 6000}
+       * @default {'enableSystemParams': true, 'timeout': 6000}
        */
-      options?: Record<string, any>;
+      options?: TqtGeneral.IAnyObject;
       /**
        * URL参数信息，会拼接在URL上进行请求
-       * @defaultValue {}
+       * @default {}
        */
-      params?: Record<string, any>;
+      params?: TqtGeneral.IAnyObject;
       /**
        * HTTP BODY信息，JSON格式
-       * @defaultValue {}
+       * @default {}
        */
-      body?: Record<string, any>;
+      body?: TqtGeneral.IAnyObject;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用失败的回调函数 */

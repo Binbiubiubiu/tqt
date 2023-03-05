@@ -81,41 +81,47 @@ declare module "@tarojs/taro" {
     }
   }
 
+  namespace qn.removeTabBarBadgeEx {
+    interface Option {
+      /** 要移除红色提醒文字的菜单项，对应 tabBarEx 配置中的 id 字段 */
+      id: string;
+      /** 接口调用结束的回调函数（调用成功、失败都会执行） */
+      complete?: (res: TqtGeneral.CallbackResult) => void;
+      /** 接口调用失败的回调函数 */
+      fail?: (res: TqtGeneral.CallbackResult) => void;
+      /** 接口调用成功的回调函数 */
+      success?: (result: TqtGeneral.CallbackResult) => void;
+    }
+  }
+
   interface qn {
     /**
      * 切换左侧导航条选中项
-     * @since 7.18.00N
      */
     switchTabEx(options: qn.switchTabEx.Option): Promise<TqtGeneral.CallbackResult>;
     /**
      * 显示左侧导航条的某一菜单项
-     * @since 7.25.00N
      */
     showTabEx(options: qn.showTabEx.Option): Promise<TqtGeneral.CallbackResult>;
     /**
      * 隐藏左侧导航条的某一菜单项
-     * @since 7.25.00N
      */
     hideTabEx(options: qn.hideTabEx.Option): Promise<TqtGeneral.CallbackResult>;
     /**
      * 在左侧导航条的菜单项右侧显示红点
-     * @since 7.31.00N
      */
     showTabBarRedDotEx(options: qn.showTabBarRedDotEx.Option): Promise<TqtGeneral.CallbackResult>;
     /**
      * 隐藏在左侧导航条的菜单项右侧的红点
-     * @since 7.31.00N
      */
     hideTabBarRedDotEx(options: qn.hideTabBarRedDotEx.Option): Promise<TqtGeneral.CallbackResult>;
     /**
      * 在左侧导航条的菜单项右侧显示红色提醒文字
-     * @since 7.31.00N
      */
-    showTabBarRedDotEx(options: qn.showTabBarRedDotEx.Option): Promise<TqtGeneral.CallbackResult>;
+    setTabBarBadgeEx(options: qn.setTabBarBadgeEx.Option): Promise<TqtGeneral.CallbackResult>;
     /**
      * 移除在左侧导航条的菜单项右侧的红色提醒文字
-     * @since 7.31.00N
      */
-    hideTabBarRedDotEx(options: qn.hideTabBarRedDotEx.Option): Promise<TqtGeneral.CallbackResult>;
+    removeTabBarBadgeEx(options: qn.removeTabBarBadgeEx.Option): Promise<TqtGeneral.CallbackResult>;
   }
 }

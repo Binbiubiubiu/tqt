@@ -5,12 +5,12 @@ declare module "@tarojs/taro" {
     interface Option {
       /**
        * 最大文件数。如果用户选择的文件数多于 count，只返回 count 个。
-       * @defaultValue 1
+       * @default 1
        */
       count?: number;
       /**
        * 图片=`0x01`，文档=`0x02`，多媒体=`0x04`，按“位或”自由组合
-       * @defaultValue 0x01
+       * @default 0x01
        */
       type?: number;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -18,7 +18,7 @@ declare module "@tarojs/taro" {
       /** 接口调用失败的回调函数 */
       fail?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用成功的回调函数 */
-      success?: (result: TqtGeneral.SuccessCallbackResult) => void;
+      success?: (result: SuccessCallbackResult) => void;
     }
 
     interface SuccessCallbackResult extends TqtGeneral.CallbackResult {
@@ -31,12 +31,12 @@ declare module "@tarojs/taro" {
     interface Option {
       /**
        * 最大文件数。如果用户选择的文件数多于 count，只返回 count 个。
-       * @defaultValue 1
+       * @default 1
        */
       count?: number;
       /**
        * 图片=`0x01`，文档=`0x02`，多媒体=`0x04`，按“位或”自由组合
-       * @defaultValue 0x01
+       * @default 0x01
        */
       type?: number;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -44,7 +44,7 @@ declare module "@tarojs/taro" {
       /** 接口调用失败的回调函数 */
       fail?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用成功的回调函数 */
-      success?: (result: TqtGeneral.SuccessCallbackResult) => void;
+      success?: (result: SuccessCallbackResult) => void;
     }
 
     interface SuccessCallbackResult extends TqtGeneral.CallbackResult {
@@ -77,19 +77,16 @@ declare module "@tarojs/taro" {
   interface qn {
     /**
      * 选择文件
-     * @since 7.12.00N
      */
-    chooseFile(option: qn.chooseFile.Option): Promise<TqtGeneral.SuccessCallbackResult>;
+    chooseFile(option: qn.chooseFile.Option): Promise<qn.chooseFile.SuccessCallbackResult>;
     /**
      * 选择文件并读取文件内容
-     * @since 7.22.00N
      */
     chooseFileAndGetContent(
       option: qn.chooseFileAndGetContent.Option,
-    ): Promise<TqtGeneral.SuccessCallbackResult>;
+    ): Promise<qn.chooseFileAndGetContent.SuccessCallbackResult>;
     /**
      * 第保存文件到磁盘
-     * @since 7.32.00N
      */
     saveFileToDisk(option: qn.saveFileToDisk.Option): Promise<TqtGeneral.CallbackResult>;
   }

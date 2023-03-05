@@ -80,7 +80,7 @@ declare module "@tarojs/taro" {
     interface Option {
       /**
        * 设置步数自动上传状态
-       * @defaultValue true */
+       * @default true */
       status: boolean;
     }
 

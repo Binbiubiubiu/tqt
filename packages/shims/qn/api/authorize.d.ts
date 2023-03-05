@@ -8,7 +8,7 @@ declare module "@tarojs/taro" {
       /** 接口调用失败的回调函数 */
       fail?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用成功的回调函数 */
-      success?: (result: TqtGeneral.CallbackResult) => void;
+      success?: (res: TqtGeneral.CallbackResult) => void;
     }
   }
 
@@ -28,12 +28,12 @@ declare module "@tarojs/taro" {
   interface qn {
     /**
      * 清除用户授权Token
-     * @since 7.12.00N
+     *
      */
     cleanToken(option: qn.cleanToken.Option): Promise<TqtGeneral.CallbackResult>;
     /**
      * 弹出子账号授权框
-     * @since 7.12.00N
+     *
      */
     showSubAccountAuth(option: qn.showSubAccountAuth.Option): Promise<TqtGeneral.CallbackResult>;
   }

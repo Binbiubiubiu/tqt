@@ -1,7 +1,7 @@
 import { Alipay } from "@tarojs/plugin-platform-alipay";
 // import { qn as qnComponents } from "./components";
 
-const PACKAGE_NAME = "taro-plugin-platform-alipay-tb";
+const PACKAGE_NAME = "@tqtjs/taro-plugin-platform-alipay-tb";
 export const RUNATIME_PATH = `${PACKAGE_NAME}/dist/runtime`;
 
 export default class TB extends Alipay {

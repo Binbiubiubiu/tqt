@@ -11,6 +11,15 @@
     "platform-plugin",
     "mini-program"
   ],
+  "type": "module",
+  "files": [
+    "index.d.ts",
+    "taro.qn.d.ts",
+    "taro.tb.d.ts",
+    "qn",
+    "tb",
+    "global.d.ts"
+  ],
   "main": "",
   "types": "index.d.ts",
   "typesVersions": {
@@ -35,11 +44,28 @@
     "./tb": "./taro.tb.d.ts",
     "./tb/*": "./tb/*"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "pnpm test:qn && pnpm test:tb",
+    "test:qn": "tsc -p tsconfig.qn.json",
+    "test:tb": "tsc -p tsconfig.tb.json"
+  },
   "dependencies": {
-    "@tarojs/taro": "*",
-    "@tarojs/components": "*",
     "@types/react": "*"
+  },
+  "devDependencies": {
+    "@tqtjs/shared": "workspace:*"
+  },
+  "peerDependencies": {
+    "@tarojs/components": "^3.3.8",
+    "@tarojs/taro": "^3.3.8"
+  },
+  "peerDependenciesMeta": {
+    "@tarojs/taro": {
+      "optional": true
+    },
+    "@tarojs/components": {
+      "optional": true
+    }
   },
   "repository": "git+https://github.com/Binbiubiubiu/tqtjs.git",
   "bugs": {
