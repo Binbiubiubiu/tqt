@@ -2,15 +2,19 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.textRiskIdentification {
-    interface Option {
-      /** 待检查的文本，最大长度10000 */
-      text: string;
+    interface Option extends TqtGeneral.IAnyOption {
+      data: Data;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用失败的回调函数 */
       fail?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用成功的回调函数 */
-      success?: (result: TqtGeneral.CallbackResult) => void;
+      success?: (result: SuccessCallbackResult) => void;
+    }
+
+    interface Data extends TqtGeneral.IAnyOption {
+      /** 待检查的文本，最大长度10000 */
+      text: string;
     }
 
     interface SuccessCallbackResult extends TqtGeneral.CallbackResult {
@@ -56,15 +60,19 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.imgRisk {
-    interface Option {
-      /** 云存储中返回的fileId */
-      cloudFileId: string;
+    interface Option extends TqtGeneral.IAnyOption {
+      data: Data;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用失败的回调函数 */
       fail?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用成功的回调函数 */
-      success?: (result: TqtGeneral.CallbackResult) => void;
+      success?: (result: SuccessCallbackResult) => void;
+    }
+
+    interface Data extends TqtGeneral.IAnyOption {
+      /** 云存储中返回的fileId */
+      cloudFileId: string;
     }
 
     interface SuccessCallbackResult extends TqtGeneral.CallbackResult {
@@ -110,13 +118,13 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.preventCheat {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用失败的回调函数 */
       fail?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用成功的回调函数 */
-      success?: (result: TqtGeneral.CallbackResult) => void;
+      success?: (result: SuccessCallbackResult) => void;
     }
 
     interface SuccessCallbackResult extends TqtGeneral.CallbackResult {

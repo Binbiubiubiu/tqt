@@ -3,19 +3,19 @@ import Taro from "@tarojs/taro";
 declare module "@tarojs/taro" {
   namespace qn.onStartUp {
     interface Listener {
-      (e: any): void;
+      (e: TqtGeneral.IAnyObject): void;
     }
   }
 
   namespace qn.onWindowResized {
     interface Listener {
-      (e: any): void;
+      (e: TqtGeneral.IAnyObject): void;
     }
   }
 
   namespace qn.onImActiveContactChanged {
     interface Listener {
-      (e: any): void;
+      (e: TqtGeneral.IAnyObject): void;
     }
   }
 

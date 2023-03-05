@@ -2,13 +2,13 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.chooseAddress {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用失败的回调函数 */
       fail?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用成功的回调函数 */
-      success?: (result: TqtGeneral.CallbackResult) => void;
+      success?: (result: SuccessCallbackResult) => void;
     }
 
     interface SuccessCallbackResult extends TqtGeneral.CallbackResult {

@@ -19,9 +19,12 @@ export default class TB extends Alipay {
    */
   constructor(ctx, config) {
     super(ctx, config);
-
     this.setupTransaction.addWrapper({
-      close: this.modifyTemplate,
+      close: () => {
+        this.modifyTemplate();
+        // 覆盖alipay 插件方法
+        this.generateProjectConfig("project.tb.json", "mini.project.json");
+      },
     });
   }
 

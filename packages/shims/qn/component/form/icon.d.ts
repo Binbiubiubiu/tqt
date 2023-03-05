@@ -1,6 +1,7 @@
 declare module "@tarojs/components" {
   import type { ComponentType } from "react";
-  interface IconProps {
+  import type { IconProps as OldProps } from "@tarojs/components/types/Icon";
+  interface IconProps extends Omit<OldProps, "type"> {
     /**
      * 指定图标大小,可选值: 'xxs', 'xs', 'small', 'medium', 'large', 'xl', 'xxl', 'xxxl', 'inherit'
      * @default 'medium'

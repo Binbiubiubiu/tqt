@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.openMessage {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 卖家昵称 */
       sellerNick: string;
       /** 是否打开H5类型的页面 */
@@ -17,14 +17,13 @@ declare module "@tarojs/taro" {
       success?: (result: TqtGeneral.CallbackResult) => void;
     }
 
-    interface Params {
+    interface Params extends TqtGeneral.IAnyOption {
       itemId: string;
-      [key: string]: any;
     }
   }
 
   namespace tb.subscribe {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 订阅内容业务域(消息:message) */
       domainKey: string;
       /** 订阅内容资源点 */

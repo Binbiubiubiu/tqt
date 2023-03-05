@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.checkAddedStatus {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用失败的回调函数 */

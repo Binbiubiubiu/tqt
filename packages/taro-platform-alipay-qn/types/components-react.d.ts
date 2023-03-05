@@ -1,6 +1,6 @@
 export * from "@tarojs/plugin-platform-alipay/dist/components-react";
 
-declare const Icon = "icon";
-declare const Progress = "progress";
+declare const Tab = "tab";
+declare const TabItem = "tab-item";
 
-export { Icon, Progress };
+export { Tab, TabItem };

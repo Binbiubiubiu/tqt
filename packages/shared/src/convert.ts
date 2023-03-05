@@ -5,10 +5,12 @@ export function promisefy(taro: any, global: any, sfcApis: Set<string>, cbApis?:
         const obj = Object.assign({}, options);
         return new Promise((resolve) => {
           const [cb] = args;
-          args[0] = (res: any) => {
-            cb?.(res);
-            resolve(res);
-          };
+          if (typeof cb === "function") {
+            args[0] = (res: any) => {
+              cb?.(res);
+              resolve(res);
+            };
+          }
           global[key](obj, ...args);
         });
       };

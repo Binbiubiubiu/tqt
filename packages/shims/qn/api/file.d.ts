@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace qn.chooseFile {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /**
        * 最大文件数。如果用户选择的文件数多于 count，只返回 count 个。
        * @default 1
@@ -28,7 +28,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace qn.chooseFileAndGetContent {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /**
        * 最大文件数。如果用户选择的文件数多于 count，只返回 count 个。
        * @default 1
@@ -56,7 +56,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace qn.saveFileToDisk {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /**
        * 要保存的文件路径
        */

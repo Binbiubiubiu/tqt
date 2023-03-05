@@ -26,6 +26,6 @@ Taro.qn
   })
   .then((res: Taro.qn.database.SuccessCallbackResult) => {});
 
-Taro.qn.onDatabaseLimitWarning((e: any) => {});
+Taro.qn.onDatabaseLimitWarning((e: TqtGeneral.IAnyObject) => {});
 
-Taro.qn.onDatabaseLimitDebug((e: any) => {});
+Taro.qn.onDatabaseLimitDebug((e: TqtGeneral.IAnyObject) => {});

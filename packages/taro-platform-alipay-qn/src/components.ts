@@ -1,12 +1,6 @@
 import { singleQuote } from "@tarojs/shared";
 
 export const qn = {
-  // ======== 额外组件 ========
-  Icon: {
-    type: "",
-    size: singleQuote("medium"),
-    custom: "false",
-  },
   Progress: {
     size: singleQuote("medium"),
     shape: singleQuote("line"),
@@ -16,5 +10,30 @@ export const qn = {
     hasBorder: "false",
     color: "",
     backgroundColor: "",
+  },
+  Icon: {
+    type: "",
+    size: singleQuote("medium"),
+    custom: "false",
+  },
+  // ======== 额外组件 ========
+  Tab: {
+    "active-key": "",
+    // size: singleQuote("medium"),
+    // shape: singleQuote("pure"),
+    // defaultActiveKey: "",
+    // animation: "true",
+    // excessMode: singleQuote("slide"),
+    // tabPosition: singleQuote("top"),
+    // triggerType: singleQuote("click"),
+    // bindTap: "",
+    // bindChange: "",
+    // bindClose: "",
+  },
+  TabItem: {
+    title: "",
+    "item-key": "",
+    // closeable: "false",
+    // disabled: "false",
   },
 };

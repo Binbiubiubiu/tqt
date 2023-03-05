@@ -1,7 +1,7 @@
 import Taro from "@tarojs/taro";
 
-Taro.qn.onStartUp((e: any) => {});
+Taro.qn.onStartUp((e: TqtGeneral.IAnyObject) => {});
 
-Taro.qn.onWindowResized((e: any) => {});
+Taro.qn.onWindowResized((e: TqtGeneral.IAnyObject) => {});
 
-Taro.qn.onImActiveContactChanged((e: any) => {});
+Taro.qn.onImActiveContactChanged((e: TqtGeneral.IAnyObject) => {});

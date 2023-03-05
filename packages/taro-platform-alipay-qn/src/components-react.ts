@@ -1,4 +1,4 @@
 // For React.createElement's type
 export * from "@tarojs/plugin-platform-alipay/dist/components-react";
-export const Icon = "icon";
-export const Progress = "progress";
+export const Tab = "tab";
+export const TabItem = "tab-item";

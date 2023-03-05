@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.navigateToTaobaoPage {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /**
        * 跳转官方业务页面定义的AppCode。目前支持：
        * - `shop`（打开店铺页）；
@@ -26,7 +26,7 @@ declare module "@tarojs/taro" {
       success?: (result: TqtGeneral.CallbackResult) => void;
     }
 
-    interface AppParams {
+    interface AppParams extends TqtGeneral.IAnyOption {
       /**
        * 对应appCode需为：`orderList`。
        *
@@ -45,7 +45,7 @@ declare module "@tarojs/taro" {
        * 当`appCode`为`orderDetail`时，指定订单Id
        *
        */
-      orderId: string;
+      orderId?: string;
       /**
        * 对应`appCode`需为：`cardCoupon`。
        *
@@ -87,7 +87,7 @@ declare module "@tarojs/taro" {
        * 当`appCode`为`shop`时，指定店铺Id
        *
        */
-      shopId: string;
+      shopId?: string;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用失败的回调函数 */

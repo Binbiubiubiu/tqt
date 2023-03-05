@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.collectGoods {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 商品id */
       id: number;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -15,7 +15,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.unCollectGoods {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 商品id */
       id: number;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -28,7 +28,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.checkGoodsCollectedStatus {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /**
        * 商品id
        *
@@ -39,7 +39,7 @@ declare module "@tarojs/taro" {
       /** 接口调用失败的回调函数 */
       fail?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用成功的回调函数 */
-      success?: (result: TqtGeneral.CallbackResult) => void;
+      success?: (result: SuccessCallbackResult) => void;
     }
 
     interface SuccessCallbackResult extends TqtGeneral.CallbackResult {
@@ -51,12 +51,12 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.openDetail {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /**
        * 商品id
        *
        */
-      id: number;
+      itemId: string;
       /**
        * 是否打开H5类型的商品详情面
        *

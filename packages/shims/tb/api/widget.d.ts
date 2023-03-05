@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.openScuCombination {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 商品 */
       productItems: Array<ProductItem>;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -15,7 +15,7 @@ declare module "@tarojs/taro" {
 
     interface ProductItem {
       /** 商品id */
-      itemid: number;
+      itemId: number;
     }
   }
 

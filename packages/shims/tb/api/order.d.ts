@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.confirmCustomOrder {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 入参 */
       data: Data;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -13,9 +13,9 @@ declare module "@tarojs/taro" {
       success?: (result: TqtGeneral.CallbackResult) => void;
     }
 
-    interface Data {
+    interface Data extends TqtGeneral.IAnyOption {
       /** 商品id */
-      itemid: number;
+      itemId: number;
       /**
        * skuId
        * @default -1

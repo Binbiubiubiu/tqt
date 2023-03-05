@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.addMenu {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /**
        * 添加的按钮枚举值，支持`share`/`cart`/`service`
        */
@@ -10,7 +10,7 @@ declare module "@tarojs/taro" {
       /**
        * 携带的参数，其中`event`为`service`时，需要传入`sellerNick`
        */
-      data?: string;
+      data?: TqtGeneral.IAnyObject;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用失败的回调函数 */

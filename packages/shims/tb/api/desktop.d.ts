@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.addToDesktop {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 桌面快捷方式的名字 */
       iconName: string;
       /** 桌面快捷方式的图标的URL */

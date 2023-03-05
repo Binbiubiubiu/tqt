@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.request {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 待请求的URL */
       url: string;
       /**
@@ -35,7 +35,7 @@ declare module "@tarojs/taro" {
       /** 接口调用失败的回调函数 */
       fail?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用成功的回调函数 */
-      success?: (result: TqtGeneral.CallbackResult) => void;
+      success?: (result: SuccessCallbackResult) => void;
     }
 
     interface SuccessCallbackResult extends TqtGeneral.CallbackResult {

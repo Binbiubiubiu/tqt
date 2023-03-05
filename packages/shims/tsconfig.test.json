@@ -4,6 +4,7 @@
     "target": "esnext",
     "module": "esnext",
     "noEmit": true,
-    "noUnusedParameters": false
+    "noUnusedParameters": false,
+    "jsx": "react"
   }
 }

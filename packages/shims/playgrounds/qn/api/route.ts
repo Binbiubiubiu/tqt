@@ -1,5 +1,4 @@
 import Taro from "@tarojs/taro";
-import { expectType } from "@tqtjs/shared";
 
 Taro.qn
   .navigateToWebPage({

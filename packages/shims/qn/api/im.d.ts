@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace qn.openChat {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 聊天的对象的`nick`，`nick`前请带上`nick`域,
        *
        * 所属域可选值为：
@@ -23,7 +23,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace qn.imGetActiveUser {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用失败的回调函数 */

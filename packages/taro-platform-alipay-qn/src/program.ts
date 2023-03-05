@@ -21,7 +21,11 @@ export default class QN extends Alipay {
     super(ctx, config);
 
     this.setupTransaction.addWrapper({
-      close: this.modifyTemplate,
+      close: () => {
+        this.modifyTemplate();
+        // 覆盖alipay 插件方法
+        this.generateProjectConfig("project.qn.json", "mini.project.json");
+      },
     });
   }
 

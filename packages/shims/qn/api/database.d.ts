@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace qn.queryDBSize {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用失败的回调函数 */
@@ -22,7 +22,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace qn.database {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 可选值为，单条处理：execSql，批量处理：batchSql */
       method: string;
       /** SQL语句 或 SQL 语句和参数的组合数组 */
@@ -43,13 +43,13 @@ declare module "@tarojs/taro" {
 
   namespace qn.onDatabaseLimitWarning {
     interface Listener {
-      (e: any): void;
+      (e: TqtGeneral.IAnyObject): void;
     }
   }
 
   namespace qn.onDatabaseLimitDebug {
     interface Listener {
-      (e: any): void;
+      (e: TqtGeneral.IAnyObject): void;
     }
   }
 

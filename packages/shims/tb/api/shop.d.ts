@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.favorShop {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 店铺归属的卖家Id */
       id: number;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -15,7 +15,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.checkShopFavoredStatus {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 商品id */
       id: number;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -23,7 +23,7 @@ declare module "@tarojs/taro" {
       /** 接口调用失败的回调函数 */
       fail?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用成功的回调函数 */
-      success?: (result: TqtGeneral.CallbackResult) => void;
+      success?: (result: SuccessCallbackResult) => void;
     }
 
     interface SuccessCallbackResult extends TqtGeneral.CallbackResult {
@@ -35,7 +35,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.unFavorShop {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 店铺归属的卖家Id */
       id: number;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */

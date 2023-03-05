@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace qn.switchTabEx {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 对应 tabBarEx 配置中的 id 字段 */
       id: string;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -15,7 +15,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace qn.showTabEx {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 要显示的菜单项，对应 tabBarEx 配置中的 id 字段 */
       id: string;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -28,7 +28,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace qn.hideTabEx {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 要隐藏的菜单项，对应 tabBarEx 配置中的 id 字段 */
       id: string;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -41,7 +41,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace qn.showTabBarRedDotEx {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 要显示红点的菜单项，对应 tabBarEx 配置中的 id 字段 */
       id: string;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -54,7 +54,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace qn.hideTabBarRedDotEx {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 要隐藏红点的菜单项，对应 tabBarEx 配置中的 id 字段 */
       id: string;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -67,7 +67,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace qn.setTabBarBadgeEx {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 要显示红点的菜单项，对应 tabBarEx 配置中的 id 字段 */
       id: string;
       /** 要显示的文字，建议最多3位数字 */
@@ -82,7 +82,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace qn.removeTabBarBadgeEx {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 要移除红色提醒文字的菜单项，对应 tabBarEx 配置中的 id 字段 */
       id: string;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */

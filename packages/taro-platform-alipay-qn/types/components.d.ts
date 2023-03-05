@@ -1,9 +1,4 @@
 declare const qn: {
-  Icon: {
-    type: string;
-    size: string;
-    custom: string;
-  };
   Progress: {
     size: string;
     shape: string;
@@ -13,6 +8,18 @@ declare const qn: {
     hasBorder: string;
     color: string;
     backgroundColor: string;
+  };
+  Icon: {
+    type: string;
+    size: string;
+    custom: string;
+  };
+  Tab: {
+    "active-key": string;
+  };
+  TabItem: {
+    title: string;
+    "item-key": string;
   };
 };
 

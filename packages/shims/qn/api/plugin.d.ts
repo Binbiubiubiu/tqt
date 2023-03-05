@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace qn.openPlugin {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 插件的`appkey`,和`category`之间必须填一个 */
       appkey?: string;
       /** 插槽类目(如：`shangpinguanli`、`jiaoyiguanli`)，和`appkey`之间必须填一个，如果都存在，`category`优先`appkey `*/
@@ -27,7 +27,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace qn.openCategory {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /**
        * 插槽协议类型，如`shangpinguanli`，`jiaoyiguanli`
        *
@@ -50,7 +50,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace qn.changePrice {
-    interface Option {
+    interface Option extends TqtGeneral.IAnyOption {
       /** 订单id
        *
        */
