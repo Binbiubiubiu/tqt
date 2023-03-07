@@ -1,8 +1,9 @@
 declare module "@tarojs/components" {
   import type { ComponentType } from "react";
-  import { CommonEventFunction } from "@tarojs/components/types/common";
+  import type { CommonEventFunction, StandardProps } from "@tarojs/components/types/common";
+  import type { TabItemProps as OldTabItemProps } from "@tarojs/components/types/TabItem";
 
-  interface TabProps {
+  interface TabProps extends Omit<StandardProps, "animation"> {
     /**
      * 被激活的选项卡的 key, 赋值则tab为受控组件, 用户无法切换
      */
@@ -54,10 +55,6 @@ declare module "@tarojs/components" {
     onClose?: CommonEventFunction;
   }
   export const Tab: ComponentType<TabProps>;
-}
-declare module "@tarojs/components" {
-  import type { ComponentType } from "react";
-  import type { TabItemProps as OldTabItemProps } from "@tarojs/components/types/TabItem";
 
   interface TabItemProps extends OldTabItemProps {
     /**
