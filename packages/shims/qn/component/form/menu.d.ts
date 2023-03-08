@@ -54,45 +54,43 @@ declare module "@tarojs/components" {
     onSelect?: CommonEventFunction;
   }
 
-  namespace MenuProps {
-    interface ItemProps extends StandardProps {
-      /**
-       * 是否禁用
-       * @default false
-       */
-      disabled?: boolean;
-      /**
-       * 帮助文本
-       */
-      helper?: string;
-    }
+  interface ItemProps extends StandardProps {
+    /**
+     * 是否禁用
+     * @default false
+     */
+    disabled?: boolean;
+    /**
+     * 帮助文本
+     */
+    helper?: string;
+  }
 
-    interface SubMenuProps extends StandardProps {
-      /**
-       * 标签内容
-       */
-      label?: string;
-      /**
-       * 是否可选，该属性仅在设置 Menu 组件 selectMode 属性后生效
-       * @default false
-       */
-      selectable?: boolean;
-      /**
-       * 子菜单打开方式，如果设置会覆盖 Menu 上的同名属性 可选值: 'inline', 'popup'
-       */
-      mode?: boolean;
-    }
+  interface SubMenuProps extends StandardProps {
+    /**
+     * 标签内容
+     */
+    label?: string;
+    /**
+     * 是否可选，该属性仅在设置 Menu 组件 selectMode 属性后生效
+     * @default false
+     */
+    selectable?: boolean;
+    /**
+     * 子菜单打开方式，如果设置会覆盖 Menu 上的同名属性 可选值: 'inline', 'popup'
+     */
+    mode?: boolean;
+  }
 
-    interface GroupProps extends StandardProps {
-      /**
-       * 标签内容
-       */
-      label?: string;
-    }
+  interface GroupProps extends StandardProps {
+    /**
+     * 标签内容
+     */
+    label?: string;
   }
 
   export const Menu: ComponentType<MenuProps>;
-  export const Item: ComponentType<MenuProps.ItemProps>;
-  export const SubMenu: ComponentType<MenuProps.SubMenuProps>;
-  export const Group: ComponentType<MenuProps.GroupProps>;
+  export const Item: ComponentType<ItemProps>;
+  export const SubMenu: ComponentType<SubMenuProps>;
+  export const Group: ComponentType<GroupProps>;
 }

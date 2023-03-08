@@ -1,3 +1,3 @@
-# @tqtjs/types
+# @tqtjs/shims
 
-Some types of tools
+Some types of shims

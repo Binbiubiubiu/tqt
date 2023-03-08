@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.addCalendarPlan {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       /** 提醒的开始时间，格式`yyyy-MM-dd HH:mm:ss` */
       startDate: string;
       /** 提醒的结束时间，格式`yyyy-MM-dd HH:mm:ss` */
@@ -23,7 +23,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.checkCalendarPlanIsExist {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       /** 要查询的提醒开始时间，格式`yyyy-MM-dd HH:mm:ss` */
       startDate: string;
       /** 要查询的提醒结束时间，格式`yyyy-MM-dd HH:mm:ss` */
@@ -45,7 +45,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.cancelCalendarPlan {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       /** 要取消的原提醒开始时间，格式`yyyy-MM-dd HH:mm:ss` */
       startDate: string;
       /** 要取消的原提醒结束时间，格式`yyyy-MM-dd HH:mm:ss` */

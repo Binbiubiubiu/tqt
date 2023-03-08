@@ -6,7 +6,7 @@ declare module "@tarojs/components" {
     /**
      * 是否显示弹层
      */
-    visible?: string;
+    visible?: boolean;
     /**
      * 弹层相对于参照元素的定位 align 的值可以是由空格隔开的字符串，如 tl bl，其中 tl 代表目标元素的左上方，bl 代表基准元素的左下方，所以 tl bl 的意思是目标元素的左上方对齐基准元素左下方。其中定位的可选值有 tl, tc, tr, cl, cc, cr, bl, bc, br。t 为 top 的缩写，b 为 bottom 的缩写，c 为 center 的缩写，l 为 left 的缩写，r 为 right 的缩写. 合法的定义格式为：'xx xx';
      * @default 'tl bl'
@@ -22,6 +22,11 @@ declare module "@tarojs/components" {
      * @default document.body
      */
     container?: string;
+    /**
+     * 渲染组件的容器，传入该 DOM 的 id
+     * @default document.body
+     */
+    target?: string;
     /**
      * 是否显示遮罩
      * @default false

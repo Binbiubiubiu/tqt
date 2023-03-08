@@ -51,7 +51,7 @@
     "@types/react": "*"
   },
   "devDependencies": {
-    "tsd": "^0.26.0"
+    "tsd": "^0.26.1"
   },
   "peerDependencies": {
     "@tarojs/components": "^3.3.8",

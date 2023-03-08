@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.setActionSheet {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       /**
        * 接口调用成功的回调函数
        *

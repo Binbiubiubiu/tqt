@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.collectGoods {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       /** 商品id */
       id: number;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -15,7 +15,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.unCollectGoods {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       /** 商品id */
       id: number;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -28,7 +28,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.checkGoodsCollectedStatus {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       /**
        * 商品id
        *
@@ -51,7 +51,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.openDetail {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       /**
        * 商品id
        *

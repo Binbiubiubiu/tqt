@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.addMenu {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       /**
        * 添加的按钮枚举值，支持`share`/`cart`/`service`
        */

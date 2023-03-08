@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.navigateToTaobaoPage {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       /**
        * 跳转官方业务页面定义的AppCode。目前支持：
        * - `shop`（打开店铺页）；
@@ -26,7 +26,7 @@ declare module "@tarojs/taro" {
       success?: (result: TqtGeneral.CallbackResult) => void;
     }
 
-    interface AppParams extends TqtGeneral.IAnyOption {
+    interface AppParams extends TqtGeneral.IUnknownObject {
       /**
        * 对应appCode需为：`orderList`。
        *

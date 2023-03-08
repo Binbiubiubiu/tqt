@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.getStepsHistory {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       /** 查询步数开始时间 格式：`yyyyMMdd` 如`20210909` */
       startTime: string;
       /** 查询步数开始时间 格式：`yyyyMMdd` 如`20210909` */
@@ -21,7 +21,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.getDailySteps {
-    interface Option extends TqtGeneral.IAnyOption {}
+    interface Option extends TqtGeneral.IUnknownObject {}
 
     interface Callback {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -35,7 +35,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.supportStepCount {
-    interface Option extends TqtGeneral.IAnyOption {}
+    interface Option extends TqtGeneral.IUnknownObject {}
 
     interface Callback {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -49,7 +49,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.stepsAuthorizeStatus {
-    interface Option extends TqtGeneral.IAnyOption {}
+    interface Option extends TqtGeneral.IUnknownObject {}
 
     interface Callback {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -63,7 +63,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.requestStepsAuthorization {
-    interface Option extends TqtGeneral.IAnyOption {}
+    interface Option extends TqtGeneral.IUnknownObject {}
 
     interface Callback {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -77,7 +77,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.setStepCountStatus {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       /**
        * 设置步数自动上传状态
        * @default true */
@@ -91,7 +91,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.getStepsStatus {
-    interface Option extends TqtGeneral.IAnyOption {}
+    interface Option extends TqtGeneral.IUnknownObject {}
 
     interface Callback {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -105,7 +105,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.requestManufacturerPermission {
-    interface Option extends TqtGeneral.IAnyOption {}
+    interface Option extends TqtGeneral.IUnknownObject {}
     interface Callback {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       (e: TqtGeneral.CallbackResult): void;
@@ -113,7 +113,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.checkManufacturerPermission {
-    interface Option extends TqtGeneral.IAnyOption {}
+    interface Option extends TqtGeneral.IUnknownObject {}
     interface Callback {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       (e: SuccessCallbackResult): void;
@@ -126,7 +126,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.requestSensorPermission {
-    interface Option extends TqtGeneral.IAnyOption {}
+    interface Option extends TqtGeneral.IUnknownObject {}
     interface Callback {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       (e: TqtGeneral.CallbackResult): void;
@@ -134,7 +134,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.checkSensorPermission {
-    interface Option extends TqtGeneral.IAnyOption {}
+    interface Option extends TqtGeneral.IUnknownObject {}
 
     interface Callback {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */

@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
   namespace tb.textRiskIdentification {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       data: Data;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtGeneral.CallbackResult) => void;
@@ -12,7 +12,7 @@ declare module "@tarojs/taro" {
       success?: (result: SuccessCallbackResult) => void;
     }
 
-    interface Data extends TqtGeneral.IAnyOption {
+    interface Data extends TqtGeneral.IUnknownObject {
       /** 待检查的文本，最大长度10000 */
       text: string;
     }
@@ -60,7 +60,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.imgRisk {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       data: Data;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtGeneral.CallbackResult) => void;
@@ -70,7 +70,7 @@ declare module "@tarojs/taro" {
       success?: (result: SuccessCallbackResult) => void;
     }
 
-    interface Data extends TqtGeneral.IAnyOption {
+    interface Data extends TqtGeneral.IUnknownObject {
       /** 云存储中返回的fileId */
       cloudFileId: string;
     }
@@ -118,7 +118,7 @@ declare module "@tarojs/taro" {
   }
 
   namespace tb.preventCheat {
-    interface Option extends TqtGeneral.IAnyOption {
+    interface Option extends TqtGeneral.IUnknownObject {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtGeneral.CallbackResult) => void;
       /** 接口调用失败的回调函数 */
