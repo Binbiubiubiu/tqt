@@ -1,7 +1,5 @@
 export const needPromiseApis = new Set([
-  // "addCardAuth",
-  // "getOpenUserInfo",
-  // "chooseAlipayContact",
+  "getAuthUserInfo",
   // 分包加载
   "loadSubPackage",
   "loadPlugin",
