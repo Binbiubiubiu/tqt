@@ -10,12 +10,14 @@ export function promisefy(taro: any, global: any, options: PromisefyOptions) {
       taro[key] = (options = {}, ...args: any[]) => {
         const obj = Object.assign({}, options);
         return new Promise((resolve) => {
-          const [cb] = args;
+          let [cb] = args;
           if (typeof cb === "function") {
             args[0] = (res: any) => {
               cb?.(res);
               resolve(res);
             };
+          } else {
+            args[0] = resolve;
           }
           global[key](obj, ...args);
         });

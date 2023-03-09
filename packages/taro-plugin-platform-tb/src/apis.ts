@@ -8,12 +8,12 @@ declare const my: any;
 
 const apiDiff: IApiDiff = {
   login: {
-    alias: "getAuthCode",
+    alias: "authorize",
     options: {
       set: [
         {
           key: "scopes",
-          value: "auth_base",
+          value: "scope.userInfo",
         },
       ],
     },
@@ -22,6 +22,10 @@ const apiDiff: IApiDiff = {
   showActionSheet: {
     options: {
       change: [
+        {
+          old: "alertText",
+          new: "title",
+        },
         {
           old: "itemList",
           new: "items",
@@ -67,8 +71,23 @@ const apiDiff: IApiDiff = {
   setNavigationBarTitle: {
     alias: "setNavigationBar",
   },
+  hideHomeButton: {
+    alias: "hideBackHome",
+  },
   setNavigationBarColor: {
     alias: "setNavigationBar",
+  },
+  compressImage: {
+    options: {
+      set: [
+        {
+          key: "apFilePaths",
+          value(options) {
+            return options.src ? [options.src] : [];
+          },
+        },
+      ],
+    },
   },
   saveImageToPhotosAlbum: {
     alias: "saveImage",
@@ -89,6 +108,16 @@ const apiDiff: IApiDiff = {
           value(options) {
             return options.urls.indexOf(options.current || options.urls[0]);
           },
+        },
+      ],
+    },
+  },
+  saveVideoToPhotosAlbum: {
+    options: {
+      change: [
+        {
+          old: "filePath",
+          new: "src",
         },
       ],
     },
@@ -226,10 +255,16 @@ const apiDiff: IApiDiff = {
   closeBLEConnection: {
     alias: "disconnectBLEDevice",
   },
+  getUserInfo: {
+    alias: "getAuthUserInfo",
+  },
+  exitMiniProgram: {
+    alias: "exit",
+  },
 };
 /**
  * 抹平API返回值的差异
- * key 为 alipay小程序中的api名称
+ * key 为 taobao小程序中的api名称
  */
 const asyncResultApiDiff = {
   getScreenBrightness: {
@@ -293,13 +328,28 @@ const asyncResultApiDiff = {
       ],
     },
   },
-  getAuthCode: {
+  authorize: {
     res: {
       set: [
         {
           key: "code",
           value(res) {
-            return res.authCode;
+            return res.accessToken;
+          },
+        },
+      ],
+    },
+  },
+  getAuthUserInfo: {
+    res: {
+      set: [
+        {
+          key: "userInfo",
+          value(res) {
+            return {
+              nickName: res.nickName,
+              avatarUrl: res.avatar,
+            };
           },
         },
       ],

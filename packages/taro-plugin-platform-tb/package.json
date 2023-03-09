@@ -27,7 +27,8 @@
       "types": "./types/index.d.ts",
       "default": "./index.js"
     },
-    "./shims-tb": "./types/shims-tb.d.ts"
+    "./shims-tb": "./types/shims-tb.d.ts",
+    "./*": "./*"
   },
   "files": [
     "index.js",

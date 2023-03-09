@@ -31,6 +31,7 @@ const runtimeConfig = <Options>{
 const otherConfig = <Options>{
   entry: ["src/components-react.ts"],
   format: ["esm"],
+  noExternal: ["@tarojs/components"],
   ...base,
 };
 

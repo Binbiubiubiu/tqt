@@ -1,20 +1,28 @@
 # taro-plugin-platform-qn
 
-Taro 插件。用于支持编译为淘宝 PC 端小程序。
+Taro 插件。用于支持编译为千牛 PC 端小程序。
 
 ## 使用
 
 #### 1. 配置插件
 
 ```js
+/**
+ * @typedef { import("@tqtjs/taro-plugin-platform-qn").PluginOptions } PluginOptions
+ * @type {PluginOptions}
+ */
+const pluginOptions = {
+  menuLevel: 2, // 默认值
+};
+
 // Taro 项目配置
 module.exports = {
   // ...
-  plugins: ['taro-plugin-platform-qn'],
+  plugins: [['taro-plugin-platform-qn', pluginOptions]],
 };
 ```
 
-#### 2. 编译为淘宝小程序
+#### 2. 编译为千牛 PC 小程序
 
 ```shell
 taro build --type qn
@@ -33,7 +41,7 @@ if (process.TARO_ENV === 'qn') {
 
 ##### API
 
-淘宝小程序拓展了一些独有 API，可以通过 `Taro.qn.xxx` 来调用，如：
+千牛 PC 小程序拓展了一些独有 API，可以通过 `Taro.qn.xxx` 来调用，如：
 
 ```js
 Taro.qn.navigateToWebPage({}).then((res) => console.log(res));

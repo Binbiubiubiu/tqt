@@ -217,6 +217,7 @@ export const components = {
   Item: {
     disabled: "false",
     helper: "",
+    index: "",
   },
   SubMenu: {
     selectable: "false",
@@ -226,6 +227,7 @@ export const components = {
   Group: {
     label: "",
   },
+  Divider: {},
   MenuButton: {
     label: "",
     autoWidth: "true",

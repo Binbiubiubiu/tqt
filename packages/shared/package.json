@@ -32,7 +32,11 @@
   ],
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch src"
+    "dev": "tsup --watch src",
+    "test": "pnpm test:coverage && pnpm test:report",
+    "test:unit": "uvu -r tsm __tests__",
+    "test:coverage": "c8 --include=src pnpm test:unit",
+    "test:report": "c8 report --reporter=text-lcov > coverage.lcov"
   },
   "repository": "git+https://github.com/Binbiubiubiu/tqtjs.git",
   "bugs": {

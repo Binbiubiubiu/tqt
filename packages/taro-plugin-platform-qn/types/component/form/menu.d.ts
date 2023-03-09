@@ -48,11 +48,18 @@ declare module "@tarojs/components" {
     defaultSelectedKeys?: Array<unknown>;
 
     /**
+     * 点击菜单项触发的回调函数 签名: Function(key: String, item: Object, event: Object) => void 参数: key: {String} 点击的菜单项的 key 值 item: {Object} 点击的菜单项对象 event: {Object} 点击的事件对象
+     * @default () => {}
+     */
+    onItemTap?: CommonEventFunction;
+
+    /**
      * 选中或取消选中菜单项触发的回调函数 签名: Function(selectedKeys: Array, item: Object, extra: Object) => void 参数: selectedKeys: {Array} 选中的所有菜单项的值 item: {Object} 选中或取消选中的菜单项 extra: {Object} 额外参数 extra.select: {Boolean} 是否是选中 extra.key: {Array} 菜单项的 key extra.label: {Object} 菜单项的文本 extra.keyPath: {Array} 菜单项 key 的路径
      * @default () => {}
      */
     onSelect?: CommonEventFunction;
   }
+  export const Menu: ComponentType<MenuProps>;
 
   interface ItemProps extends StandardProps {
     /**
@@ -64,7 +71,12 @@ declare module "@tarojs/components" {
      * 帮助文本
      */
     helper?: string;
+    /**
+     * 唯一标识
+     */
+    index?: string;
   }
+  export const Item: ComponentType<ItemProps>;
 
   interface SubMenuProps extends StandardProps {
     /**
@@ -81,6 +93,7 @@ declare module "@tarojs/components" {
      */
     mode?: boolean;
   }
+  export const SubMenu: ComponentType<SubMenuProps>;
 
   interface GroupProps extends StandardProps {
     /**
@@ -88,9 +101,8 @@ declare module "@tarojs/components" {
      */
     label?: string;
   }
-
-  export const Menu: ComponentType<MenuProps>;
-  export const Item: ComponentType<ItemProps>;
-  export const SubMenu: ComponentType<SubMenuProps>;
   export const Group: ComponentType<GroupProps>;
+
+  interface DividerProps extends StandardProps {}
+  export const Divider: ComponentType<DividerProps>;
 }

@@ -1,7 +1,7 @@
 declare module "@tarojs/components" {
   import { ComponentType } from "react";
   import { CommonEventFunction, StandardProps } from "@tarojs/components/types/common";
-  interface MenuButttonProps extends StandardProps {
+  interface MenuButtonProps extends StandardProps {
     /**
      * 弹层默认是否展开
      */
@@ -40,5 +40,5 @@ declare module "@tarojs/components" {
     onItemClick?: CommonEventFunction;
   }
 
-  export const MenuButtton: ComponentType<MenuButttonProps>;
+  export const MenuButton: ComponentType<MenuButtonProps>;
 }

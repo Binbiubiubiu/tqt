@@ -9,7 +9,7 @@
     "test": "turbo run test",
     "lint": "rome ci .",
     "format": "rome format --write . && prettier --write .",
-    "clean": "rimraf --glob  ./packages/*/{.turbo,dist}",
+    "clean": "rimraf --glob  .turbo ./node_modules/.cache/turbo ./packages/*/{.turbo,dist,coverage,*.lcov}",
     "release": "pnpm build && changeset publish",
     "publish-packages": "pnpm build && changeset version && changeset publish",
     "preinstall": "npx only-allow pnpm",
@@ -32,26 +32,27 @@
     ]
   },
   "packageManager": "pnpm@7.27.0",
-  "dependencies": {
-    "@tarojs/components": "3.6.2",
-    "@tarojs/service": "3.6.2",
-    "@tarojs/shared": "3.6.2",
-    "@tarojs/taro": "3.6.2"
-  },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.0",
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
+    "@tarojs/components": "3.6.2",
+    "@tarojs/service": "3.6.2",
+    "@tarojs/shared": "3.6.2",
+    "@tarojs/taro": "3.6.2",
+    "c8": "^7.13.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
     "prettier": "^2.8.4",
     "rimraf": "^4.3.0",
     "rome": "^11.0.0",
     "tsd": "^0.26.1",
+    "tsm": "^2.3.0",
     "tsup": "^6.6.3",
     "turbo": "^1.8.3",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "uvu": "^0.5.6"
   },
   "license": "MIT",
   "repository": "git+https://github.com/Binbiubiubiu/tqtjs.git",

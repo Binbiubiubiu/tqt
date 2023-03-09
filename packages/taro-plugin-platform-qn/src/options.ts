@@ -7,7 +7,7 @@ export interface PluginOptions {
 
 export function validOptions(ctx: IPluginContext, pluginOpts: PluginOptions) {
   ctx.addPluginOptsSchema((joi) => {
-    joi.object({
+    return joi.object({
       menuLevel: joi.number(),
     });
   });
