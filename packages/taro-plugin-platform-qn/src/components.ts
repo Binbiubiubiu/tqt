@@ -38,7 +38,9 @@ export const components = {
     disabled: "false",
   },
   Checkbox: {
+    checked: "",
     defaultChecked: "",
+    disabled: "",
     indeterminate: "",
     defaultIndeterminate: "",
     bindChange: "",
@@ -52,7 +54,12 @@ export const components = {
     bindChange: "",
   },
   Radio: {
+    checked: "",
     defaultChecked: "",
+    disabled: "",
+    value: "",
+    name: "",
+    bindChange: "",
   },
   RadioGroup: {
     size: singleQuote("medium"),
@@ -166,6 +173,11 @@ export const components = {
     bindClose: "",
     bindAfterClose: "",
   },
+  Tooltip: {
+    align: singleQuote("b"),
+    triggerType: singleQuote("hover"),
+    followTrigger: "",
+  },
   ColorPicker: {
     color: "",
     disableAlpha: "false",
@@ -183,7 +195,7 @@ export const components = {
     bindMousemove: "",
   },
   Table: {
-    dataSource: "[]",
+    dataSource: "",
     hasBorder: "true",
     hasHeader: "true",
     isZebra: "false",
@@ -193,7 +205,7 @@ export const components = {
     stickyHeader: "",
     offsetTop: "",
     selectedRowKeys: "",
-    mode: "multiple",
+    mode: singleQuote("multiple"),
     bindChange: "",
     bindSelect: "",
     bindSelectAll: "",
@@ -201,6 +213,16 @@ export const components = {
     bindSort: "",
     bindFilter: "",
     bindBodyScroll: "",
+  },
+  TableColumn: {
+    dataIndex: "",
+    title: "",
+    width: "",
+    align: "",
+    alignHeader: "",
+    lock: "",
+    resizable: "false",
+    renderSlot: "",
   },
   Menu: {
     defaultOpenKeys: "",

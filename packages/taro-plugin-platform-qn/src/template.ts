@@ -83,23 +83,61 @@ export class Template extends RecursiveTemplate {
       .join("");
   }
 
-  modifyLoopBody = (child: string, nodeName: string) => {
-    if (nodeName === "picker-view") {
-      return `<picker-view-column class="{{item.cl}}" style="{{item.st}}">
-        <view a:for="{{item.cn}}" a:key="sid">
-          ${child}
-        </view>
-      </picker-view-column>`;
-    }
+  modifyLoopBody = (child: string, _nodeName: string) => {
+    // if (nodeName === "picker-view") {
+    //   return `<picker-view-column class="{{item.cl}}" style="{{item.st}}">
+    //     <view a:for="{{item.cn}}" a:key="sid">
+    //       ${child}
+    //     </view>
+    //   </picker-view-column>`;
+    // }
 
     return child;
   };
 
   modifyLoopContainer = (children: string, nodeName: string) => {
-    if (nodeName === "picker" || nodeName === "overlay") {
+    if (nodeName === "overlay") {
       return `
   <view>${children}</view>
   `;
+    }
+
+    if (nodeName === "select") {
+      const [option, optionGroup] = ["option", "option-group"].map((key) => {
+        return {
+          nn: this.componentsAlias[key]._num,
+          attributes: this.miniComponents[key],
+        };
+      });
+
+      return `
+        <block a:for="{{i.cn}}" a:key="uid">
+          <option a:if="{{item.nn==='${option.nn}'}}" ${this.buildAttribute2(
+        option.attributes,
+        "option",
+      )} id="{{item.uid || item.sid}}" data-sid="{{item.sid}}">
+            <block a:for="{{item.cn}}" a:key="sid">
+              <template is="{{xs.e(0)}}" data="{{i:item}}" />
+            </block>
+          </option>
+          <option-group a:if="{{item.nn==='${optionGroup.nn}'}}" ${this.buildAttribute2(
+        optionGroup.attributes,
+        "option-group",
+      )} id="{{item.uid || item.sid}}" data-sid="{{item.sid}}">
+            <block a:for="{{item.cn}}" a:key="sid">
+            <option a:if="{{item.nn==='${option.nn}'}}" ${this.buildAttribute2(
+        option.attributes,
+        "option",
+      )} id="{{item.uid || item.sid}}" data-sid="{{item.sid}}">
+                  <block a:for="{{item.cn}}" a:key="sid">
+                    <template is="{{xs.e(0)}}" data="{{i:item}}" />
+                  </block>
+                </option>
+              <template a:else is="{{xs.e(0)}}" data="{{i:item}}" />
+            </block>
+          </option-group>
+        </block>
+      `;
     }
 
     if (nodeName === "tab") {
@@ -111,6 +149,39 @@ export class Template extends RecursiveTemplate {
             <template is="{{xs.e(0)}}" data="{{i:item}}" />
           </block>
         </tab-item>
+      </block>
+    `;
+    }
+    if (nodeName === "table") {
+      const attributes = this.miniComponents["table-column"];
+      const slotAlias = this.componentsAlias.slot._num;
+      return `
+      <table-column a:for="{{i.cn}}" a:key="sid" a:for-item="i" ${this.buildAttribute2(
+        attributes,
+        "table-column",
+      )} id="{{i.uid||i.sid}}" data-sid="{{i.sid}}">
+        <!-- <block a:for="{{i.cn}}" a:key="sid">
+          <view a:if="{{item.nn==='${slotAlias}'}}" slot-scope="row" class="{{item.cl}}" style="{{item.st}}" id="{{item.uid || item.sid}}" data-sid="{{item.sid}}">
+            <block a:for="{{item.cn}}" a:key="sid">
+              <template is="{{xs.e(0)}}" data="{{i:item}}" />
+            </block>
+          </view>
+          <template a:else is="{{xs.e(0)}}" data="{{i:item}}" />
+        </block> -->
+      </table-column>
+    `;
+    }
+    if (nodeName === "balloon" || nodeName === "tooltip") {
+      const slot = this.componentsAlias.slot;
+      const slotAlias = slot._num;
+      return `
+      <block a:for="{{i.cn}}" a:key="uid">
+        <button a:if="{{item.nn==='${slotAlias}'}}" slot="{{item.p0}}" class="{{item.cl}}" style="{{item.st}}" id="{{item.uid || item.sid}}" data-sid="{{item.sid}}">
+          <block a:for="{{item.cn}}" a:key="sid">
+            <template is="{{xs.e(0)}}" data="{{i:item}}" />
+          </block>
+        </button>
+        <template a:else is="{{xs.e(0)}}" data="{{i:item}}" />
       </block>
     `;
     }
@@ -162,8 +233,8 @@ export class Template extends RecursiveTemplate {
 
   modifyTemplateResult = (res: string, nodeName: string) => {
     if (
-      nodeName === "picker-view-column" ||
       nodeName === "tab-item" ||
+      nodeName === "table-column" ||
       // nodeName === "item" ||
       nodeName === "group" ||
       nodeName === "divider" ||
@@ -178,6 +249,13 @@ export class Template extends RecursiveTemplate {
     }
     if (nodeName === "menu-button") {
       return res.replace('visible="{{i.p4}}"', "{{i.p4!==undefined?'visible=\"{{i.p4}}\"':''}}");
+    }
+    if (nodeName === "balloon") {
+      return res.replace('visible="{{i.p12}}"', "{{i.p12!==undefined?'visible=\"{{i.p12}}\"':''}}");
+    }
+
+    if (nodeName === "checkbox" || nodeName === "radio") {
+      return res.replace('checked="{{i.p0}}"', "{{i.p0!==undefined?'checked=\"{{i.p0}}\"':''}}");
     }
     return res;
   };

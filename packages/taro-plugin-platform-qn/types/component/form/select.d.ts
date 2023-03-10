@@ -56,10 +56,20 @@ declare module "@tarojs/components" {
      */
     mode?: string;
 
+    showSearch?: boolean;
+    hasClear?: boolean;
+
     /**
      * Select发生改变时触发的回调 参数: event event.detail.value:选中的值
      */
     onChange?: CommonEventFunction;
+
+    /**
+     * Select 失去焦点时触发的回调
+     */
+    onBlur?: CommonEventFunction;
+
+    onToggleHighlightItem?: CommonEventFunction;
   }
 
   interface OptionGroupProps extends StandardProps {

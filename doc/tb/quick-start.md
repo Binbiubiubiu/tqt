@@ -1,10 +1,30 @@
-# @tqtjs/taro-plugin-platform-tb
+---
+outline: deep
+---
 
-Taro 插件。用于支持编译为淘宝小程序。
+# 快速上手
 
-## 使用
+通过本章节来了解如何快速上手并使用淘宝小程序平台插件
 
-#### 1. 配置插件
+## 安装
+
+::: code-group
+
+```sh [npm]
+npm install -D @tqtjs/taro-plugin-platform-tb
+```
+
+```sh [yarn]
+yarn add -D @tqtjs/taro-plugin-platform-tb
+```
+
+```sh [pnpm]
+pnpm add -D @tqtjs/taro-plugin-platform-tb
+```
+
+:::
+
+### 配置插件
 
 ```js
 // Taro 项目配置
@@ -14,28 +34,28 @@ module.exports = {
 };
 ```
 
-#### 2. 编译为淘宝小程序
+### 编译为淘宝小程序
 
-```sh
+```shell
 taro build --type tb
 taro build --type tb --watch
 ```
 
-#### 其它
+## 其它
 
-##### 平台判断
+### 平台判断
 
-```ts
+```js
 if (process.TARO_ENV === 'tb') {
   // ...
 }
 ```
 
-##### API
+### API
 
 淘宝小程序拓展了一些独有 API，可以通过 `Taro.tb.xxx` 来调用，如：
 
-```ts
+```js
 Taro.tb.navigateToTaobaoPage({}).then((res) => console.log(res));
 ```
 

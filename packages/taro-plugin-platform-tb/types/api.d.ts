@@ -26,6 +26,7 @@
 /// <reference path="api/ui/city-picker.d.ts" />
 /// <reference path="api/ui/date-picker.d.ts" />
 /// <reference path="api/ui/interaction.d.ts" />
+/// <reference path="api/authorize.d.ts" />
 /// <reference path="api/data-security.d.ts" />
 /// <reference path="api/location.d.ts" />
 /// <reference path="api/runtime.d.ts" />

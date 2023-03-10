@@ -4,13 +4,16 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"],
-      "inputs": ["src/**", "tsup.config.ts"]
+      "inputs": ["src/**", "tsup.config.ts"],
+      "outputMode": "new-only"
     },
     "dev": {
       "cache": false
     },
     "test": {
-      "outputs": ["coverage"]
+      "inputs": ["__tests__", "test-d"],
+      "outputs": ["coverage"],
+      "outputMode": "new-only"
     }
   },
   "globalDependencies": ["tsconfig.base.json"]

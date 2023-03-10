@@ -18,6 +18,16 @@ const apiDiff: IApiDiff = {
       ],
     },
   },
+  authorize: {
+    options: {
+      change: [
+        {
+          old: "scope",
+          new: "scopes",
+        },
+      ],
+    },
+  },
 
   showActionSheet: {
     options: {

@@ -74,4 +74,24 @@ declare module "@tarojs/components" {
     onAfterClose?: CommonEventFunction;
   }
   export const Balloon: ComponentType<BalloonProps>;
+
+  interface TooltipProps extends StandardProps {
+    /**
+     * 弹出层位置 可选值: 't'(上) 'r'(右) 'b'(下) 'l'(左) 'tl'(上左) 'tr'(上右) 'bl'(下左) 'br'(下右) 'lt'(左上) 'lb'(左下) 'rt'(右上) 'rb'(右下 及其 两两组合)
+     * @default 'b'
+     */
+    align?: string;
+
+    /**
+     * 触发行为 鼠标悬浮, 鼠标点击('hover','click')或者它们组成的数组，如['hover', 'click'], 强烈不建议使用'focus'，若有复杂交互，推荐使用triggerType为click的Balloon组件
+     * @default 'click'
+     */
+    triggerType?: string;
+
+    /**
+     * 是否跟随滚动
+     */
+    followTrigger?: boolean;
+  }
+  export const Tooltip: ComponentType<TooltipProps>;
 }

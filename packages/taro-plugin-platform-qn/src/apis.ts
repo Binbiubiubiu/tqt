@@ -8,27 +8,37 @@ declare const my: any;
 
 const apiDiff: IApiDiff = {
   login: {
-    alias: "getAuthCode",
+    alias: "authorize",
     options: {
       set: [
         {
           key: "scopes",
-          value: "auth_base",
+          value: "*",
+        },
+      ],
+    },
+  },
+  authorize: {
+    options: {
+      change: [
+        {
+          old: "scope",
+          new: "scopes",
         },
       ],
     },
   },
 
-  showActionSheet: {
-    options: {
-      change: [
-        {
-          old: "itemList",
-          new: "items",
-        },
-      ],
-    },
-  },
+  // showActionSheet: {
+  //   options: {
+  //     change: [
+  //       {
+  //         old: "itemList",
+  //         new: "items",
+  //       },
+  //     ],
+  //   },
+  // },
   showToast: {
     options: {
       change: [
@@ -64,11 +74,23 @@ const apiDiff: IApiDiff = {
       ],
     },
   },
-  setNavigationBarTitle: {
-    alias: "setNavigationBar",
-  },
-  setNavigationBarColor: {
-    alias: "setNavigationBar",
+  // setNavigationBarTitle: {
+  //   alias: "setNavigationBar",
+  // },
+  // setNavigationBarColor: {
+  //   alias: "setNavigationBar",
+  // },
+  compressImage: {
+    options: {
+      set: [
+        {
+          key: "apFilePaths",
+          value(options) {
+            return options.src ? [options.src] : [];
+          },
+        },
+      ],
+    },
   },
   saveImageToPhotosAlbum: {
     alias: "saveImage",
@@ -133,24 +155,24 @@ const apiDiff: IApiDiff = {
       ],
     },
   },
-  openLocation: {
-    options: {
-      set: [
-        {
-          key: "latitude",
-          value(options) {
-            return String(options.latitude);
-          },
-        },
-        {
-          key: "longitude",
-          value(options) {
-            return String(options.longitude);
-          },
-        },
-      ],
-    },
-  },
+  // openLocation: {
+  //   options: {
+  //     set: [
+  //       {
+  //         key: "latitude",
+  //         value(options) {
+  //           return String(options.latitude);
+  //         },
+  //       },
+  //       {
+  //         key: "longitude",
+  //         value(options) {
+  //           return String(options.longitude);
+  //         },
+  //       },
+  //     ],
+  //   },
+  // },
   uploadFile: {
     options: {
       change: [
@@ -175,35 +197,35 @@ const apiDiff: IApiDiff = {
       ],
     },
   },
-  makePhoneCall: {
-    options: {
-      change: [
-        {
-          old: "phoneNumber",
-          new: "number",
-        },
-      ],
-    },
-  },
-  scanCode: {
-    alias: "scan",
-    options: {
-      change: [
-        {
-          old: "onlyFromCamera",
-          new: "hideAlbum",
-        },
-      ],
-      set: [
-        {
-          key: "type",
-          value(options) {
-            return options.scanType?.[0].slice(0, -4) || "qr";
-          },
-        },
-      ],
-    },
-  },
+  // makePhoneCall: {
+  //   options: {
+  //     change: [
+  //       {
+  //         old: "phoneNumber",
+  //         new: "number",
+  //       },
+  //     ],
+  //   },
+  // },
+  // scanCode: {
+  //   alias: "scan",
+  //   options: {
+  //     change: [
+  //       {
+  //         old: "onlyFromCamera",
+  //         new: "hideAlbum",
+  //       },
+  //     ],
+  //     set: [
+  //       {
+  //         key: "type",
+  //         value(options) {
+  //           return options.scanType?.[0].slice(0, -4) || "qr";
+  //         },
+  //       },
+  //     ],
+  //   },
+  // },
   setScreenBrightness: {
     options: {
       change: [
@@ -214,49 +236,55 @@ const apiDiff: IApiDiff = {
       ],
     },
   },
-  onBLEConnectionStateChange: {
-    alias: "onBLEConnectionStateChanged",
+  // onBLEConnectionStateChange: {
+  //   alias: "onBLEConnectionStateChanged",
+  // },
+  // offBLEConnectionStateChange: {
+  //   alias: "offBLEConnectionStateChanged",
+  // },
+  // createBLEConnection: {
+  //   alias: "connectBLEDevice",
+  // },
+  // closeBLEConnection: {
+  //   alias: "disconnectBLEDevice",
+  // },
+  getUserInfo: {
+    alias: "getAuthUserInfo",
   },
-  offBLEConnectionStateChange: {
-    alias: "offBLEConnectionStateChanged",
-  },
-  createBLEConnection: {
-    alias: "connectBLEDevice",
-  },
-  closeBLEConnection: {
-    alias: "disconnectBLEDevice",
+  exitMiniProgram: {
+    alias: "exit",
   },
 };
 /**
  * 抹平API返回值的差异
- * key 为 alipay小程序中的api名称
+ * key 为 qianniu小程序中的api名称
  */
 const asyncResultApiDiff = {
-  getScreenBrightness: {
-    res: {
-      set: [
-        {
-          key: "value",
-          value(res) {
-            return res.brightness;
-          },
-        },
-      ],
-      remove: ["brightness"],
-    },
-  },
-  scan: {
-    res: {
-      set: [
-        {
-          key: "result",
-          value(res) {
-            return res.code;
-          },
-        },
-      ],
-    },
-  },
+  // getScreenBrightness: {
+  //   res: {
+  //     set: [
+  //       {
+  //         key: "value",
+  //         value(res) {
+  //           return res.brightness;
+  //         },
+  //       },
+  //     ],
+  //     remove: ["brightness"],
+  //   },
+  // },
+  // scan: {
+  //   res: {
+  //     set: [
+  //       {
+  //         key: "result",
+  //         value(res) {
+  //           return res.code;
+  //         },
+  //       },
+  //     ],
+  //   },
+  // },
   getClipboard: {
     res: {
       set: [
@@ -293,13 +321,28 @@ const asyncResultApiDiff = {
       ],
     },
   },
-  getAuthCode: {
+  authorize: {
     res: {
       set: [
         {
           key: "code",
           value(res) {
-            return res.authCode;
+            return res.accessToken;
+          },
+        },
+      ],
+    },
+  },
+  getAuthUserInfo: {
+    res: {
+      set: [
+        {
+          key: "userInfo",
+          value(res) {
+            return {
+              nickName: res.nickName,
+              avatarUrl: res.avatar,
+            };
           },
         },
       ],
@@ -329,20 +372,20 @@ const asyncResultApiDiff = {
       ],
     },
   },
-  getBLEDeviceServices: {
-    res: {
-      set: [
-        {
-          key: "services",
-          value(res) {
-            return res.services.map((item) => {
-              return { uuid: item.serviceId, isPrimary: item.isPrimary };
-            });
-          },
-        },
-      ],
-    },
-  },
+  // getBLEDeviceServices: {
+  //   res: {
+  //     set: [
+  //       {
+  //         key: "services",
+  //         value(res) {
+  //           return res.services.map((item) => {
+  //             return { uuid: item.serviceId, isPrimary: item.isPrimary };
+  //           });
+  //         },
+  //       },
+  //     ],
+  //   },
+  // },
 };
 
 const nativeRequest = my.canIUse("request") ? my.request : my.httpRequest;

@@ -77,3 +77,6 @@ common/autoinstallers/*/.npmrc
 
 # Turbo
 .turbo
+
+#vitepress
+doc/.vitepress/cache

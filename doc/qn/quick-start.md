@@ -1,10 +1,30 @@
-# @tqtjs/taro-plugin-platform-qn
+---
+outline: deep
+---
 
-Taro 插件。用于支持编译为千牛 PC 端小程序。
+# 快速上手
 
-## 使用
+通过本章节来了解如何快速上手并使用`千牛PC小程序`平台插件
 
-#### 1. 配置插件
+## 安装
+
+::: code-group
+
+```sh [npm]
+npm install -D @tqtjs/taro-plugin-platform-qn
+```
+
+```sh [yarn]
+yarn add -D @tqtjs/taro-plugin-platform-qn
+```
+
+```sh [pnpm]
+pnpm add -D @tqtjs/taro-plugin-platform-qn
+```
+
+:::
+
+### 配置插件
 
 ```js
 /**
@@ -22,28 +42,28 @@ module.exports = {
 };
 ```
 
-#### 2. 编译为千牛 PC 小程序
+### 编译为`千牛PC小程序`
 
-```sh
+```shell
 taro build --type qn
 taro build --type qn --watch
 ```
 
-#### 其它
+## 其它
 
-##### 平台判断
+### 平台判断
 
-```ts
+```js
 if (process.TARO_ENV === 'qn') {
   // ...
 }
 ```
 
-##### API
+### API
 
 千牛 PC 小程序拓展了一些独有 API，可以通过 `Taro.qn.xxx` 来调用，如：
 
-```ts
+```js
 Taro.qn.navigateToWebPage({}).then((res) => console.log(res));
 ```
 

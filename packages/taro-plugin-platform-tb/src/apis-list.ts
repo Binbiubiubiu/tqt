@@ -3,27 +3,37 @@ export const needPromiseApis = new Set([
   // 分包加载
   "loadSubPackage",
   "loadPlugin",
+  // 交互反馈
+  "prompt",
   // 选择城市
   "chooseCity",
   // 选择日期
   "datePicker",
-  "authorize",
-  "getRunScene",
-  "getServerTime",
-  "rsa",
-  "sendSMS",
-  "optionsSelect",
-  "prompt",
+  // 设置页面是否支持下拉
   "setCanPullDown",
+  // 选项选择器
+  "optionsSelect",
+
+  // 发短信
+  "sendSMS",
+  // 获取服务器时间
+  "getServerTime",
+  // 权限引导
   "showAuthGuide",
-  "textRiskIdentification",
-  "vibrate",
+  // 摇一摇
   "watchShake",
+  // 振动
+  "vibrate",
   // 传统蓝牙
   "connectBLEDevice",
   "disconnectBLEDevice",
-  // "makeBluetoothPair",
   "setBLEMTU",
+  // 退出当前小程序
+  "exit",
+  // 数据安全
+  "rsa",
+  // 小程序当前运行版本类型
+  "getRunScene",
   // 小部件
   "getRelationAppId",
   "getRelationAppInfo",

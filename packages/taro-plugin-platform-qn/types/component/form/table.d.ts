@@ -99,4 +99,43 @@ declare module "@tarojs/components" {
     onBodyScroll?: CommonEventFunction;
   }
   export const Table: ComponentType<TableProps>;
+
+  interface TableColumnProps extends StandardProps {
+    /**
+     * 指定列对应的字段，支持a.b形式的快速取值
+     */
+    dataIndex?: string;
+
+    /**
+     * 表头显示的内容value, rowIndex, record, context四个属性只可读不可被更改
+     */
+    title?: string;
+
+    /**
+     * 列宽，注意在锁列的情况下一定需要配置宽度
+     */
+    width?: string | number;
+
+    /**
+     * 单元格的对齐方式 可选值: 'left', 'center', 'right'
+     */
+    align?: string;
+
+    /**
+     * 单元格标题的对齐方式, 不配置默认读取align值 可选值: 'left', 'center', 'right'
+     */
+    alignHeader?: string;
+
+    /**
+     * 是否支持锁列,可选值为left,right, true
+     */
+    lock?: string | boolean;
+
+    /**
+     * 是否支持列宽调整, 当该值设为true，table的布局方式会修改为fixed.
+     * @default false
+     */
+    resizable?: boolean;
+  }
+  export const TableColumn: ComponentType<TableColumnProps>;
 }
