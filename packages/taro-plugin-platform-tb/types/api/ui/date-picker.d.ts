@@ -34,6 +34,6 @@ declare module "@tarojs/taro" {
   }
   interface TaroStatic {
     /** 打开日期选择列表 */
-    datePicker(option: datePicker.Option): Promise<datePicker.SuccessCallbackResult>;
+    datePicker(option?: datePicker.Option): Promise<datePicker.SuccessCallbackResult>;
   }
 }

@@ -1,6 +1,14 @@
 import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
+  namespace chooseAddress {
+    interface SuccessCallbackResult
+      extends Pick<
+        Taro.tb.chooseAddress.SuccessCallbackResult,
+        "type" | "streetName" | "streetCode"
+      > {}
+  }
+
   namespace tb.chooseAddress {
     interface Option extends TqtTBGeneral.IUnknownObject {
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -37,6 +45,8 @@ declare module "@tarojs/taro" {
     /**
      * 打开收货地址选择器
      */
-    chooseAddress(option: tb.chooseAddress.Option): Promise<tb.chooseAddress.SuccessCallbackResult>;
+    chooseAddress(
+      option?: tb.chooseAddress.Option,
+    ): Promise<tb.chooseAddress.SuccessCallbackResult>;
   }
 }

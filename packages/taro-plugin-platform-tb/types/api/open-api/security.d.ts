@@ -155,6 +155,6 @@ declare module "@tarojs/taro" {
     /**
      * 业务风控营销反作弊
      */
-    preventCheat(option: tb.preventCheat.Option): Promise<tb.preventCheat.SuccessCallbackResult>;
+    preventCheat(option?: tb.preventCheat.Option): Promise<tb.preventCheat.SuccessCallbackResult>;
   }
 }

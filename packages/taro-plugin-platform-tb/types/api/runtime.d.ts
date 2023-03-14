@@ -21,6 +21,6 @@ declare module "@tarojs/taro" {
     /**
      * 非对称加密
      */
-    getRunScene(option: getRunScene.Option): Promise<getRunScene.SuccessCallbackResult>;
+    getRunScene(option?: getRunScene.Option): Promise<getRunScene.SuccessCallbackResult>;
   }
 }

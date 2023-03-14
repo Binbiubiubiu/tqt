@@ -13,9 +13,9 @@ declare module "@tarojs/taro" {
       /** 授权码。PC千牛上授权不返回该参数 */
       accessToken: string;
       /** 成功的授权 scope */
-      authSucessScope: string;
+      authSucessScope: Array<string>;
       /** 授权出错详情对象 */
-      authErrorScope: string;
+      authErrorScope: TqtQNGeneral.IAnyObject;
     }
   }
 

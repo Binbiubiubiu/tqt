@@ -20,15 +20,16 @@ const apiDiff: IApiDiff = {
   },
   authorize: {
     options: {
-      change: [
+      set: [
         {
-          old: "scope",
-          new: "scopes",
+          key: "scopes",
+          value(options) {
+            return options.scope ?? options.scopes;
+          },
         },
       ],
     },
   },
-
   showActionSheet: {
     options: {
       change: [
@@ -70,10 +71,12 @@ const apiDiff: IApiDiff = {
   },
   showLoading: {
     options: {
-      change: [
+      set: [
         {
-          old: "title",
-          new: "content",
+          key: "content",
+          value(options) {
+            return options.title ?? "";
+          },
         },
       ],
     },
@@ -81,11 +84,12 @@ const apiDiff: IApiDiff = {
   setNavigationBarTitle: {
     alias: "setNavigationBar",
   },
-  hideHomeButton: {
-    alias: "hideBackHome",
-  },
   setNavigationBarColor: {
     alias: "setNavigationBar",
+  },
+  setNavigationBar: {},
+  hideHomeButton: {
+    alias: "hideBackHome",
   },
   compressImage: {
     options: {
@@ -93,7 +97,7 @@ const apiDiff: IApiDiff = {
         {
           key: "apFilePaths",
           value(options) {
-            return options.src ? [options.src] : [];
+            return options.apFilePaths ?? (options.src ? [options.src] : []);
           },
         },
       ],
@@ -110,6 +114,7 @@ const apiDiff: IApiDiff = {
       ],
     },
   },
+  saveImage: {},
   previewImage: {
     options: {
       set: [
@@ -164,10 +169,14 @@ const apiDiff: IApiDiff = {
   },
   saveFile: {
     options: {
-      change: [
+      set: [
         {
-          old: "tempFilePath",
-          new: "apFilePath",
+          key: "apFilePath",
+          value(options) {
+            const { tempFilePath } = options;
+            delete options.tempFilePath; // 删除避免模拟器报错
+            return tempFilePath;
+          },
         },
       ],
     },
@@ -314,6 +323,18 @@ const asyncResultApiDiff = {
       ],
     },
   },
+  showActionSheet: {
+    res: {
+      set: [
+        {
+          key: "tapIndex",
+          value(res) {
+            return res.index;
+          },
+        },
+      ],
+    },
+  },
   chooseImage: {
     res: {
       set: [
@@ -321,6 +342,18 @@ const asyncResultApiDiff = {
           key: "tempFilePaths",
           value(res) {
             return res.apFilePaths;
+          },
+        },
+      ],
+    },
+  },
+  compressImage: {
+    res: {
+      set: [
+        {
+          key: "tempFilePath",
+          value(res) {
+            return res.apFilePaths[0];
           },
         },
       ],
@@ -338,13 +371,28 @@ const asyncResultApiDiff = {
       ],
     },
   },
+  getSavedFileList: {
+    res: {
+      set: [
+        {
+          key: "fileList",
+          value(res: any) {
+            return res.fileList.map((item: any) => {
+              item.filePath = item.apFilePath;
+              return item;
+            });
+          },
+        },
+      ],
+    },
+  },
   authorize: {
     res: {
       set: [
         {
           key: "code",
           value(res) {
-            return res.accessToken;
+            return res?.accessToken;
           },
         },
       ],
@@ -626,4 +674,14 @@ export function initNativeApi(taro) {
     sfcApis: needPromiseTBSfcApis,
     cbApis: needPromiseTBCbApis,
   });
+
+  taro.chooseAddress = async (...args: any[]) => {
+    const res = await taro.tb.chooseAddress(...args);
+    res.userName ??= res.name;
+    return res;
+  };
+
+  taro.createOffscreenCanvas = (options: Taro.createOffscreenCanvas.Option) => {
+    return my.createOffscreenCanvas(options.width, options.height);
+  };
 }

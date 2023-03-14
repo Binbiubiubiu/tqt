@@ -44,6 +44,6 @@ declare module "@tarojs/taro" {
     /**
      * 隐藏正在展示的商品 SKU 选择
      */
-    hideSku(option: tb.hideSku.Option): Promise<TqtTBGeneral.CallbackResult>;
+    hideSku(option?: tb.hideSku.Option): Promise<TqtTBGeneral.CallbackResult>;
   }
 }

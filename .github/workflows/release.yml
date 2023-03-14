@@ -3,6 +3,7 @@ name: Release
 permissions:
   # TODO: once `releases: write` is supported, use it instead.
   contents: write
+  pull-requests: read|write
 
 on:
   push:
@@ -14,6 +15,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   release:
     runs-on: ubuntu-latest
+    if: github.repository == 'Binbiubiubiu/tqt'
     steps:
       - uses: actions/checkout@v3
         with:

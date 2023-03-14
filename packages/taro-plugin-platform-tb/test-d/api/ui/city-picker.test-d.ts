@@ -4,54 +4,36 @@ import Taro from "@tarojs/taro";
 import { expectType } from "tsd";
 
 const cityPickerReturn = Taro.chooseCity({
+  showLocatedCity: true,
+  setLocatedCity: true,
+  showHotCities: true,
+  customHistoryCities: [
+    {
+      city: "朝阳区",
+      adCode: "110105",
+      spell: "chaoyang",
+    },
+  ],
   cities: [
     {
       city: "朝阳区",
       adCode: "110105",
       spell: "chaoyang",
     },
-    {
-      city: "海淀区",
-      adCode: "110108",
-      spell: "haidian",
-    },
-    {
-      city: "丰台区",
-      adCode: "110106",
-      spell: "fengtai",
-    },
-    {
-      city: "东城区",
-      adCode: "110101",
-      spell: "dongcheng",
-    },
-    {
-      city: "西城区",
-      adCode: "110102",
-      spell: "xicheng",
-    },
-    {
-      city: "房山区",
-      adCode: "110111",
-      spell: "fangshan",
-    },
   ],
   hotCities: [
     {
       city: "朝阳区",
       adCode: "110105",
-    },
-    {
-      city: "海淀区",
-      adCode: "110108",
-    },
-    {
-      city: "丰台区",
-      adCode: "110106",
+      spell: "",
     },
   ],
   success(res) {
     expectType<Taro.chooseCity.SuccessCallbackResult>(res);
+    expectType<string>(res.adCode);
+    expectType<string>(res.city);
+    expectType<number>(res.latitude);
+    expectType<number>(res.longitude);
   },
   fail(res) {
     expectType<TqtTBGeneral.CallbackResult>(res);

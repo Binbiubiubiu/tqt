@@ -22,7 +22,7 @@ declare module "@tarojs/taro" {
      * 查询轻应用是否被添加
      */
     checkAddedStatus(
-      option: tb.checkAddedStatus.Option,
+      option?: tb.checkAddedStatus.Option,
     ): Promise<tb.checkAddedStatus.SuccessCallbackResult>;
   }
 }

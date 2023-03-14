@@ -8,5 +8,9 @@ declare namespace TqtTBGeneral {
     error?: number;
     /** 错误信息 */
     errorMessage?: string;
+    /** 错误信息 */
+    message?: string;
+    /** 签名 */
+    signature?: string;
   }
 }

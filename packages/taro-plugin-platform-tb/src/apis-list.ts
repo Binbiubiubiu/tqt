@@ -42,6 +42,8 @@ export const needPromiseApis = new Set([
   "widgetDowngrade",
   "getSceneInfo",
   "getBizData",
+  // canvas
+  "createCanvas",
 ]);
 
 export const needPromiseTBSfcApis = new Set([

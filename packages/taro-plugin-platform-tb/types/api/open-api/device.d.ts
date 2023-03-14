@@ -21,6 +21,6 @@ declare module "@tarojs/taro" {
     /**
      * 获取用户设备ID
      */
-    getDeviceId(option: tb.getDeviceId.Option): Promise<tb.getDeviceId.SuccessCallbackResult>;
+    getDeviceId(option?: tb.getDeviceId.Option): Promise<tb.getDeviceId.SuccessCallbackResult>;
   }
 }

@@ -16,6 +16,6 @@ declare module "@tarojs/taro" {
     }
   }
   interface TaroStatic {
-    getServerTime(option: getServerTime.Option): Promise<getServerTime.SuccessCallbackResult>;
+    getServerTime(option?: getServerTime.Option): Promise<getServerTime.SuccessCallbackResult>;
   }
 }

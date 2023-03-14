@@ -222,7 +222,6 @@ export const components = {
     alignHeader: "",
     lock: "",
     resizable: "false",
-    renderSlot: "",
   },
   Menu: {
     defaultOpenKeys: "",
