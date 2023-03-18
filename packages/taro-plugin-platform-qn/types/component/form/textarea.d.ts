@@ -36,7 +36,7 @@ declare module "@tarojs/components" {
     /**
      * 状态 可选值: 'error'(错误)
      */
-    state?: string;
+    state?: keyof FormItemProps.ValidateState;
 
     /**
      * 是否有边框

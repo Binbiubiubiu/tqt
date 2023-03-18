@@ -9,9 +9,9 @@ Taro.login({
     expectType<string>(res.accessToken);
   },
   fail(res) {
-    expectType<TqtTBGeneral.CallbackResult>(res);
+    expectType<TaroGeneral.CallbackResult>(res);
   },
   complete(res) {
-    expectType<TqtTBGeneral.CallbackResult>(res);
+    expectType<TaroGeneral.CallbackResult>(res);
   },
 });

@@ -7,12 +7,12 @@ declare module "@tarojs/components" {
      * 与 shape 属性配套使用，shape设为button时有效 可选值: 'large'(大) 'medium'(中) 'small'(小)
      * @default 'medium'
      */
-    size?: string;
+    size?: keyof FormProps.Size;
 
     /**
      * 可以设置成 button 展示形状 可选值: 'button'(按钮状)
      */
-    shape?: string;
+    shape?: keyof RadioGroupProps.Shape;
 
     /**
      * radio group的选中项的值
@@ -40,6 +40,12 @@ declare module "@tarojs/components" {
      * @default 'hoz'
      */
     itemDirection?: string;
+  }
+
+  namespace RadioGroupProps {
+    interface Shape {
+      button: any;
+    }
   }
 
   export const RadioGroup: ComponentType<RadioGroupProps>;

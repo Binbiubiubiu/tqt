@@ -6,22 +6,27 @@ declare module "@tarojs/components" {
     /**
      * 选择器尺寸 可选值: 'small', 'medium', 'large'
      */
-    size?: string;
+    size?: keyof FormProps.Size;
 
     /**
      * 当前值，用于受控模式
      */
-    value?: unknown;
+    value?: string | Array<string>;
 
     /**
      * 初始的默认值
      */
-    defaultValue?: unknown;
+    defaultValue?: string | Array<string>;
+
+    /**
+     * 没有值的时候的占位符
+     */
+    placeholder?: unknown;
 
     /**
      * 校验状态 可选值: 'error', 'loading'
      */
-    state?: string;
+    state?: keyof FormItemProps.ValidateState;
 
     /**
      * 下拉菜单是否与选择器对齐，如果需要下拉区域自动撑开，需要配置为false
@@ -54,7 +59,7 @@ declare module "@tarojs/components" {
      * 选择器模式 可选值: 'single', 'multiple', 'tag'
      * @default 'single'
      */
-    mode?: string;
+    mode?: keyof SelectProps.Mode;
 
     showSearch?: boolean;
     hasClear?: boolean;
@@ -72,12 +77,22 @@ declare module "@tarojs/components" {
     onToggleHighlightItem?: CommonEventFunction;
   }
 
+  namespace SelectProps {
+    interface Mode {
+      single: any;
+      multiple: any;
+      tag: any;
+    }
+  }
+  export const Select: ComponentType<SelectProps>;
+
   interface OptionGroupProps extends StandardProps {
     /**
      * 设置分组的文案
      */
     label?: string;
   }
+  export const OptionGroup: ComponentType<OptionGroupProps>;
 
   interface OptionProps extends StandardProps {
     /**
@@ -90,8 +105,5 @@ declare module "@tarojs/components" {
      */
     disabled?: boolean;
   }
-
-  export const Select: ComponentType<SelectProps>;
-  export const OptionGroup: ComponentType<OptionGroupProps>;
   export const Option: ComponentType<OptionProps>;
 }

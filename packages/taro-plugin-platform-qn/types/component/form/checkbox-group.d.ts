@@ -28,8 +28,13 @@ declare module "@tarojs/components" {
      * 子项目的排列方式 - hoz: 水平排列 (default) - ver: 垂直排列 可选值: 'hoz', 'ver'
      * @default 'hoz'
      */
-    itemDirection?: string;
+    itemDirection?: keyof CheckboxGroupProps.ItemDirection;
   }
-
+  namespace CheckboxGroupProps {
+    interface ItemDirection {
+      hoz: any;
+      ver: any;
+    }
+  }
   export const CheckboxGroup: ComponentType<CheckboxGroupProps>;
 }

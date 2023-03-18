@@ -28,6 +28,7 @@
 /// <reference path="api/open-api/navigation.d.ts" />
 /// <reference path="api/open-api/route.d.ts" />
 /// <reference path="api/open-api/security.d.ts" />
+/// <reference path="api/ui/ar-camera.d.ts" />
 /// <reference path="api/ui/canvas.d.ts" />
 /// <reference path="api/ui/city-picker.d.ts" />
 /// <reference path="api/ui/date-picker.d.ts" />

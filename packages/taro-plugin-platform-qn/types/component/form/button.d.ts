@@ -6,24 +6,24 @@ declare module "@tarojs/components" {
      * 按钮的尺寸 可选值: 'small', 'medium', 'large'
      * @default 'medium'
      */
-    size?: string;
+    size?: keyof FormProps.Size;
 
     /**
      * 按钮的类型 可选值: 'primary', 'secondary', 'normal'
      * @default 'normal'
      */
-    type?: string;
+    type?: keyof ButtonProps.Type;
 
     /**
      * 按钮中 Icon 的尺寸，用于替代 Icon 的默认大小 可选值: 'xxs', 'xs', 'small', 'medium', 'large', 'xl', 'xxl', 'xxxl'
      */
-    iconSize?: string;
+    iconSize?: keyof IconProps.Size;
 
     /**
      * 设置标签类型 可选值: 'button', 'a'
      * @default "button"
      */
-    component?: string;
+    component?: keyof ButtonProps.ComponentType;
 
     /**
      * 设置按钮的载入状态
@@ -35,7 +35,7 @@ declare module "@tarojs/components" {
      * 是否为幽灵按钮 可选值: true, false, 'light', 'dark'
      * @default false
      */
-    ghost?: boolean;
+    ghost?: boolean | keyof ButtonProps.Ghost;
 
     /**
      * 是否为文本按钮
@@ -48,6 +48,23 @@ declare module "@tarojs/components" {
      * @default false
      */
     warning?: boolean;
+  }
+  namespace ButtonProps {
+    interface Type {
+      primary: any;
+      secondary: any;
+      normal: any;
+    }
+
+    interface ComponentType {
+      a: any;
+      button: any;
+    }
+
+    interface Ghost {
+      light: any;
+      dark: any;
+    }
   }
   export const Button: ComponentType<ButtonProps>;
 }

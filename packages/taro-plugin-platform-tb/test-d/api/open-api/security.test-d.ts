@@ -4,16 +4,14 @@ import Taro from "@tarojs/taro";
 import { expectType } from "tsd";
 
 const tbTextRiskIdentificationReturn = Taro.tb.textRiskIdentification({
-  data: {
-    text: "xxxxxx",
-  },
+  text: "",
   success(res) {
     expectType<Taro.tb.textRiskIdentification.SuccessCallbackResult>(res);
     expectType<string>(res.suggestion);
-    const item = res.check_results[0];
+    const item = res.checkPoints[0];
     expectType<string>(item.label);
     expectType<string>(item.suggestion);
-    expectType<string>(item.rate);
+    expectType<number>(item.rate);
     expectType<string>(item.scene);
   },
   fail(res) {

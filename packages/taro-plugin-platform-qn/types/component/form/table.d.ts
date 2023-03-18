@@ -55,13 +55,13 @@ declare module "@tarojs/components" {
     /**
      * 设置了此属性,将表格的选择状态变为受控状态,接收值为该行数据的key的值
      */
-    selectedRowKeys?: Array<unknown>;
+    selectedRowKeys?: Array<string>;
 
     /**
      * 选择selection的模式。可选值为single,multiple
      * @default 'multiple'
      */
-    mode?: string;
+    mode?: keyof TableProps.Mode;
 
     /**
      * 选择改变的时候触发的事件，注意: 其中records只会包含当前dataSource的数据，很可能会小于selectedRowKeys的长度。参数: e.detail.values: [selectedRowKeys, records] selectedRowKeys: Array,已经选择行的key records: Array 已经选择的行记录对象
@@ -98,6 +98,12 @@ declare module "@tarojs/components" {
      */
     onBodyScroll?: CommonEventFunction;
   }
+  namespace TableProps {
+    interface Mode {
+      multiple: any;
+      single: any;
+    }
+  }
   export const Table: ComponentType<TableProps>;
 
   interface TableColumnProps extends StandardProps {
@@ -119,23 +125,30 @@ declare module "@tarojs/components" {
     /**
      * 单元格的对齐方式 可选值: 'left', 'center', 'right'
      */
-    align?: string;
+    align?: keyof TableColumnProps.Align;
 
     /**
      * 单元格标题的对齐方式, 不配置默认读取align值 可选值: 'left', 'center', 'right'
      */
-    alignHeader?: string;
+    alignHeader?: keyof TableColumnProps.Align;
 
     /**
      * 是否支持锁列,可选值为left,right, true
      */
-    lock?: string | boolean;
+    lock?: keyof TableColumnProps.Align | boolean;
 
     /**
      * 是否支持列宽调整, 当该值设为true，table的布局方式会修改为fixed.
      * @default false
      */
     resizable?: boolean;
+  }
+  namespace TableColumnProps {
+    interface Align {
+      left: any;
+      center: any;
+      right: any;
+    }
   }
   export const TableColumn: ComponentType<TableColumnProps>;
 }

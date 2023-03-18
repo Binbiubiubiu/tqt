@@ -13,7 +13,7 @@ declare module "@tarojs/components" {
      * 尺寸 可选值: 'small'(小) 'medium'(中) 'large'(大)
      * @default 'medium'
      */
-    size?: string;
+    size?: keyof FormProps.Size;
 
     /**
      * 是否展现最大长度样式
@@ -42,7 +42,7 @@ declare module "@tarojs/components" {
     /**
      * 状态 可选值: 'error'(错误) 'loading'(校验中) 'success'(成功)
      */
-    state?: string;
+    state?: keyof FormItemProps.ValidateState;
 
     /**
      * 是否出现clear按钮

@@ -7,19 +7,19 @@ declare module "@tarojs/components" {
      * 分页组件大小 可选值: 'small', 'medium', 'large'
      * @default 'medium'
      */
-    size?: string;
+    size?: keyof PaginationProps.Size;
 
     /**
      * 分页组件类型 可选值: 'normal', 'simple', 'mini'
      * @default 'normal'
      */
-    type?: string;
+    type?: keyof PaginationProps.Type;
 
     /**
      * 前进后退按钮样式 可选值: 'normal', 'arrow-only', 'arrow-prev-only', 'no-border'
      * @default 'normal'
      */
-    shape?: unknown;
+    shape?: keyof PaginationProps.Shape;
 
     /**
      *（受控）当前页码
@@ -54,7 +54,7 @@ declare module "@tarojs/components" {
      * 每页显示选择器类型 可选值: false, 'filter', 'dropdown'
      * @default false
      */
-    pageSizeSelector?: boolean | string;
+    pageSizeSelector?: false | keyof PaginationProps.PageSizeSelector;
 
     /**
      * 每页显示选择器可选值
@@ -66,7 +66,7 @@ declare module "@tarojs/components" {
      * 每页显示选择器在组件中的位置 可选值: 'start', 'end'
      * @default 'start'
      */
-    pageSizePosition?: string;
+    pageSizePosition?: keyof PaginationProps.PageSizePosition;
 
     /**
      * 存在每页显示选择器时是否使用浮动布局
@@ -95,6 +95,36 @@ declare module "@tarojs/components" {
      * 每页显示记录数量改变时的回调函数 签名: Function(pageSize: Number) => void 参数: pageSize: {Number} 改变后的每页显示记录数
      */
     onPageSizeChange?: CommonEventFunction;
+  }
+  namespace PaginationProps {
+    interface Size {
+      small: any;
+      medium: any;
+      large: any;
+    }
+
+    interface Type {
+      normal: any;
+      simple: any;
+      mini: any;
+    }
+
+    interface Shape {
+      normal: any;
+      "arrow-only": any;
+      "arrow-prev-only": any;
+      "no-border": any;
+    }
+
+    interface PageSizeSelector {
+      filter: any;
+      dropdown: any;
+    }
+
+    interface PageSizePosition {
+      start: any;
+      end: any;
+    }
   }
 
   export const Pagination: ComponentType<PaginationProps>;

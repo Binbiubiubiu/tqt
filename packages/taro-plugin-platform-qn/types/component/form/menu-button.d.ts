@@ -27,7 +27,7 @@ declare module "@tarojs/components" {
      * 子菜单打开的触发行为 可选值: 'click', 'hover'
      * @default ‘click’
      */
-    popupTriggerType?: string;
+    popupTriggerType?: keyof MenuButtonProps.PopupTriggerType;
 
     /**
      * 弹层在显示和隐藏触发的事件 签名: Function() => void
@@ -39,6 +39,11 @@ declare module "@tarojs/components" {
      */
     onItemClick?: CommonEventFunction;
   }
-
+  namespace MenuButtonProps {
+    interface PopupTriggerType {
+      click: any;
+      hover: any;
+    }
+  }
   export const MenuButton: ComponentType<MenuButtonProps>;
 }

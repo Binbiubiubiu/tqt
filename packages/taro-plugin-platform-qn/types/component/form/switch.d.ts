@@ -12,12 +12,12 @@ declare module "@tarojs/components" {
      * switch的尺寸 可选值: 'medium'(正常大小) 'small'(缩小版大小)
      * @default 'medium'
      */
-    size?: string;
+    size?: keyof FormProps.Size;
 
     /**
      * Checkbox 的默认中间态，只会影响到 Checkbox 的样式，并不影响其 checked 属性
      */
-    unCheckedChildren?: boolean;
+    unCheckedChildren?: string;
 
     /**
      * 开关默认值 (针对非受控组件)

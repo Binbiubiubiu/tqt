@@ -7,12 +7,12 @@ declare module "@tarojs/components" {
      * 输入框尺寸 可选值: 'small', 'medium', 'large'
      * @default 'medium'
      */
-    size?: string;
+    size?: keyof FormProps.Size;
 
     /**
      * 输入框状态 可选值: 'success', 'loading', 'error'
      */
-    state?: string;
+    state?: keyof FormItemProps.ValidateState;
 
     /**
      * 输入提示
@@ -93,12 +93,12 @@ declare module "@tarojs/components" {
      * 输入框尺寸 可选值: 'small', 'medium', 'large'
      * @default 'medium'
      */
-    size?: string;
+    size?: keyof FormProps.Size;
 
     /**
      * 输入框状态 可选值: 'success', 'loading', 'error'
      */
-    state?: string;
+    state?: keyof FormItemProps.ValidateState;
 
     /**
      * 输入提示
@@ -162,7 +162,7 @@ declare module "@tarojs/components" {
      * 输入框尺寸 可选值: 'small', 'medium', 'large'
      * @default 'medium'
      */
-    size?: string;
+    size?: keyof FormProps.Size;
 
     /**
      * 日期范围值数组 [moment, moment]
@@ -195,7 +195,7 @@ declare module "@tarojs/components" {
     /**
      * 输入框状态 可选值: 'success', 'loading', 'error'
      */
-    state?: string;
+    state?: keyof FormItemProps.ValidateState;
 
     /**
      * 是否禁用
@@ -238,12 +238,12 @@ declare module "@tarojs/components" {
      * 输入框尺寸 可选值: 'small', 'medium', 'large'
      * @default 'medium'
      */
-    size?: string;
+    size?: keyof FormProps.Size;
 
     /**
      * 输入框状态 可选值: 'success', 'loading', 'error'
      */
-    state?: string;
+    state?: keyof FormItemProps.ValidateState;
 
     /**
      * 输入提示

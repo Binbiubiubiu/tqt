@@ -7,12 +7,12 @@ declare module "@tarojs/components" {
      * 尺寸；可选值: `small`, `medium`, `large`
      * @default `medium`
      */
-    size?: string;
+    size?: "small" | "medium" | "large";
     /**
      * 形态；可选值: `circle`, `line`
      * @default `line`
      */
-    shape?: string;
+    shape?: "circle" | "line";
     /**
      * 所占百分比
      * @default 0
@@ -21,7 +21,7 @@ declare module "@tarojs/components" {
     /**
      * 进度状态, 显示优先级: `color` > `progressive` > `state`；可选值: `normal`, `success`, `error` Enum
      */
-    state?: string;
+    state?: "normal" | "success" | "error";
     /**
      * 是否为色彩阶段变化模式, 显示优先级: `color` > `progressive` > `state`
      */
@@ -39,5 +39,6 @@ declare module "@tarojs/components" {
      */
     backgroundColor?: string;
   }
+
   export const Progress: ComponentType<ProgressProps>;
 }

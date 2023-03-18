@@ -6,25 +6,25 @@ declare module "@tarojs/components" {
      * 初始打开的子菜单的 key 值
      * @default []
      */
-    defaultOpenKeys?: unknown | Array<unknown>;
+    defaultOpenKeys?: string | Array<string>;
 
     /**
      * 子菜单打开的模式 可选值: 'inline', 'popup'
      * @default ’inline‘
      */
-    mode?: string;
+    mode?: keyof MenuProps.Mode;
 
     /**
      * 子菜单打开的触发行为 可选值: 'click', 'hover'
      * @default ‘click’
      */
-    triggerType?: string;
+    triggerType?: keyof MenuProps.TriggerType;
 
     /**
      * 展开内连子菜单的模式，同时可以展开一个子菜单还是多个子菜单，该属性仅在 mode 为 inline 时生效 可选值: 'single', 'multiple'
      * @default multiple
      */
-    openMode?: string;
+    openMode?: keyof MenuProps.OpenMode;
 
     /**
      * 弹出子菜单自定义 style
@@ -34,18 +34,18 @@ declare module "@tarojs/components" {
     /**
      * 当前选中菜单项的 key 值
      */
-    selectedKeys?: Array<unknown>;
+    selectedKeys?: string | Array<string>;
 
     /**
      * 选中模式，单选还是多选，默认无值，不可选 可选值: 'single', 'multiple'
      */
-    selectMode?: string;
+    selectMode?: keyof MenuProps.SelectMode;
 
     /**
      * 初始选中菜单项的 key 值
      * @default []
      */
-    defaultSelectedKeys?: Array<unknown>;
+    defaultSelectedKeys?: string | Array<string>;
 
     /**
      * 点击菜单项触发的回调函数 签名: Function(key: String, item: Object, event: Object) => void 参数: key: {String} 点击的菜单项的 key 值 item: {Object} 点击的菜单项对象 event: {Object} 点击的事件对象
@@ -58,6 +58,26 @@ declare module "@tarojs/components" {
      * @default () => {}
      */
     onSelect?: CommonEventFunction;
+  }
+  namespace MenuProps {
+    interface Mode {
+      inline: any;
+      popup: any;
+    }
+
+    interface TriggerType {
+      click: any;
+      hover: any;
+    }
+    interface OpenMode {
+      single: any;
+      multiple: any;
+    }
+
+    interface SelectMode {
+      single: any;
+      multiple: any;
+    }
   }
   export const Menu: ComponentType<MenuProps>;
 
@@ -91,7 +111,7 @@ declare module "@tarojs/components" {
     /**
      * 子菜单打开方式，如果设置会覆盖 Menu 上的同名属性 可选值: 'inline', 'popup'
      */
-    mode?: boolean;
+    mode?: keyof MenuProps.Mode;
   }
   export const SubMenu: ComponentType<SubMenuProps>;
 

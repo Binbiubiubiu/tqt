@@ -1,8 +1,8 @@
 declare module "@tarojs/components" {
   import { ComponentType } from "react";
-  import { StandardProps } from "@tarojs/components/types/common";
+  import { FormItemProps as OldProps } from "@tarojs/components/types/common";
 
-  interface QnFormItemProps extends StandardProps {
+  interface FormItemProps extends OldProps {
     /**
      * label 标签的文本
      */
@@ -11,7 +11,7 @@ declare module "@tarojs/components" {
     /**
      * 单个 Item 的 size 自定义，优先级高于 Form 的 size, 并且当组件与 Item 一起使用时，组件自身设置 size 属性无效。 可选值: 'large', 'small', 'medium'
      */
-    size?: string;
+    size?: keyof FormProps.Size;
 
     /**
      * 自定义提示信息，如不设置，则会根据校验规则自动生成.
@@ -25,19 +25,19 @@ declare module "@tarojs/components" {
     extra?: string;
 
     /**
-     * 校验状态，如不设置，则会根据校验规则自动生成 可选值: 'error'(成功) 'success'(失败) 'loading'(校验中)
+     * 校验状态，如不设置，则会根据校验规则自动生成 可选值: 'error'(失败) 'success'(成功) 'loading'(校验中)
      */
-    validateState?: string;
+    validateState?: keyof FormItemProps.ValidateState;
 
     /**
      * 标签的位置 可选值: 'top'(上) 'left'(左) 'inset'(内)
      */
-    labelAlign?: string;
+    labelAlign?: keyof FormProps.LabelAlign;
 
     /**
      * 标签的左右对齐方式 可选值: 'left'(左) 'right'(右)
      */
-    labelTextAlign?: string;
+    labelTextAlign?: keyof FormProps.LabelTextAlign;
 
     /**
      * [表单校验] 不能为空
@@ -54,6 +54,15 @@ declare module "@tarojs/components" {
      */
     requiredMessage?: string;
   }
-
-  export const FormItem: ComponentType<QnFormItemProps>;
+  namespace FormItemProps {
+    interface ValidateState {
+      /** 失败 */
+      error: any;
+      /** 成功 */
+      success: any;
+      /** 校验中 */
+      loading: any;
+    }
+  }
+  export const FormItem: ComponentType<FormItemProps>;
 }
