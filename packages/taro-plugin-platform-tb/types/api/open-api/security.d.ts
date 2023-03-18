@@ -3,18 +3,14 @@ import Taro from "@tarojs/taro";
 declare module "@tarojs/taro" {
   namespace tb.textRiskIdentification {
     interface Option extends TqtTBGeneral.IUnknownObject {
-      data: Data;
+      /** 待检查的文本，最大长度10000 */
+      text: string;
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TqtTBGeneral.CallbackResult) => void;
       /** 接口调用失败的回调函数 */
       fail?: (res: TqtTBGeneral.CallbackResult) => void;
       /** 接口调用成功的回调函数 */
       success?: (result: SuccessCallbackResult) => void;
-    }
-
-    interface Data extends TqtTBGeneral.IUnknownObject {
-      /** 待检查的文本，最大长度10000 */
-      text: string;
     }
 
     interface SuccessCallbackResult extends TqtTBGeneral.CallbackResult {
@@ -25,7 +21,7 @@ declare module "@tarojs/taro" {
        */
       suggestion: string;
       /** 检查结果 */
-      check_results: Array<CheckResult>;
+      checkPoints: Array<CheckResult>;
     }
 
     interface CheckResult {
@@ -50,7 +46,7 @@ declare module "@tarojs/taro" {
        */
       suggestion: string;
       /** 结果准确度 */
-      rate: string;
+      rate: number;
       /** 检查的场景。
        * - `porn`：涉黄；
        * - `terrorism`：暴恐涉政

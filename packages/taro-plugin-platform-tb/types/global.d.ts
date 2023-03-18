@@ -3,14 +3,14 @@ declare namespace TqtTBGeneral {
   type IUnknownObject = Record<string, unknown>;
   interface CallbackResult extends IAnyObject {
     /** 是否成功 */
-    success?: boolean;
+    success: boolean;
     /** 错误码 */
-    error?: number;
+    error: number;
     /** 错误信息 */
-    errorMessage?: string;
+    errorMessage: string;
     /** 错误信息 */
-    message?: string;
+    message: string;
     /** 签名 */
-    signature?: string;
+    signature: string;
   }
 }

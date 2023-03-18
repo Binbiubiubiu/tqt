@@ -1,6 +1,7 @@
 /// <reference path="api/base/plugin.d.ts" />
 /// <reference path="api/base/sub-package.d.ts" />
 /// <reference path="api/device/auth-guide.d.ts" />
+/// <reference path="api/device/bluetooth.d.ts" />
 /// <reference path="api/device/os.d.ts" />
 /// <reference path="api/device/server-time.d.ts" />
 /// <reference path="api/device/sms.d.ts" />
@@ -43,8 +44,15 @@
 import Taro from "@tarojs/taro";
 
 declare module "@tarojs/taro" {
+  interface TARO_ENV_TYPE {
+    [TaroGeneral.ENV_TYPE.TB]: TaroGeneral.ENV_TYPE.TB;
+  }
+
   interface tb {}
   interface TaroStatic {
+    /** 获取基础库版本号 */
+    SDKVersion: string;
+
     tb: tb;
     /**
      * 开始原生全局事件监听
@@ -54,5 +62,13 @@ declare module "@tarojs/taro" {
      * 取消原生全局事件监听
      */
     off(eventName: string, callback: (...args: Array<unknown>) => void): void;
+  }
+}
+
+declare global {
+  namespace TaroGeneral {
+    enum ENV_TYPE {
+      TB = "TB",
+    }
   }
 }

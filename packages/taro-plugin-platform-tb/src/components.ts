@@ -1,5 +1,7 @@
 import { singleQuote } from "@tarojs/shared";
 
+const PRIMARY_COLOR = singleQuote("#fa5000");
+
 export const components = {
   // ======== 调整属性 ========
   View: {
@@ -47,6 +49,10 @@ export const components = {
   },
   Checkbox: {
     bindChange: "",
+    color: PRIMARY_COLOR,
+  },
+  Radio: {
+    color: PRIMARY_COLOR,
   },
   Input: {
     "always-system": "false",
@@ -56,6 +62,9 @@ export const components = {
     name: "",
   },
   Slider: {
+    disabled: "false",
+    activeColor: PRIMARY_COLOR,
+    backgroundColor: singleQuote("#ddd"),
     "track-size": "4",
     "handle-size": "22",
     "handle-color": singleQuote("#ffffff"),

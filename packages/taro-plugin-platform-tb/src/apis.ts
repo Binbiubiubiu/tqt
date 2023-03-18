@@ -444,7 +444,21 @@ const asyncResultApiDiff = {
           key: "services",
           value(res) {
             return res.services.map((item) => {
-              return { uuid: item.serviceId, isPrimary: item.isPrimary };
+              return { ...item, uuid: item.serviceId };
+            });
+          },
+        },
+      ],
+    },
+  },
+  getBLEDeviceCharacteristics: {
+    res: {
+      set: [
+        {
+          key: "characteristics",
+          value(res) {
+            return res.characteristics.map((item) => {
+              return { ...item, uuid: item.characteristicId };
             });
           },
         },
@@ -675,13 +689,24 @@ export function initNativeApi(taro) {
     cbApis: needPromiseTBCbApis,
   });
 
-  taro.chooseAddress = async (...args: any[]) => {
-    const res = await taro.tb.chooseAddress(...args);
+  taro.chooseAddress = async (options: Taro.chooseAddress.Option) => {
+    const res = await taro.tb.chooseAddress(options);
     res.userName ??= res.name;
     return res;
   };
 
   taro.createOffscreenCanvas = (options: Taro.createOffscreenCanvas.Option) => {
     return my.createOffscreenCanvas(options.width, options.height);
+  };
+
+  taro.tb.textRiskIdentification = async (options: Taro.tb.textRiskIdentification.Option) => {
+    const { text = "", ...rest } = options;
+    const res = await my.tb.textRiskIdentification({
+      data: {
+        text,
+      },
+      ...rest,
+    });
+    return res?.[0]?.data?.result ?? { checkPoints: [], suggestion: "" };
   };
 }

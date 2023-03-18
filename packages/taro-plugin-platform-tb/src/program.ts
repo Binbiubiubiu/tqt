@@ -37,7 +37,7 @@ export default class TB extends TaroPlatformBase {
         this.modifyMiniConfigs();
         this.modifyComponents();
         this.modifyWebpackConfig();
-        this.generateProjectConfig("project.alipay.json", "mini.project.json");
+        this.generateProjectConfig("project.tb.json", "mini.project.json");
       },
     });
   }

@@ -45,10 +45,10 @@
     "@tqtjs/shared": "workspace:*"
   },
   "peerDependencies": {
-    "@tarojs/components": "^3.3.8",
-    "@tarojs/taro": "^3.3.8",
-    "@tarojs/service": "^3.3.8",
-    "@tarojs/shared": "^3.3.8"
+    "@tarojs/components": "^3.6.2",
+    "@tarojs/taro": "^3.6.2",
+    "@tarojs/service": "^3.6.2",
+    "@tarojs/shared": "^3.6.2"
   },
   "repository": "git+https://github.com/Binbiubiubiu/tqtjs.git",
   "bugs": {

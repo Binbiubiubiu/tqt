@@ -14,10 +14,7 @@
     "publish-packages": "pnpm build && changeset version && changeset publish",
     "preinstall": "npx only-allow pnpm",
     "prepare": "is-ci || husky install",
-    "changeset": "changeset",
-    "docs:dev": "vitepress dev doc",
-    "docs:build": "vitepress build doc",
-    "docs:preview": "vitepress preview doc"
+    "changeset": "changeset"
   },
   "keywords": [
     "taro",
@@ -58,8 +55,7 @@
     "tsup": "^6.6.3",
     "turbo": "^1.8.3",
     "typescript": "^4.9.5",
-    "uvu": "^0.5.6",
-    "vitepress": "1.0.0-alpha.51"
+    "uvu": "^0.5.6"
   },
   "license": "MIT",
   "repository": "git+https://github.com/Binbiubiubiu/tqtjs.git",

@@ -33,7 +33,7 @@ export default (ctx: IPluginContext) => {
         },
       };
       prebundleOptions.exclude ||= [];
-      prebundleOptions.exclude.push(RUNATIME_PATH);
+      prebundleOptions.exclude.push(RUNATIME_PATH, "@tbmp/mp-cloud-sdk");
       prebundleOptions.include ||= [];
       prebundleOptions.include.push("@tarojs/shared");
     }

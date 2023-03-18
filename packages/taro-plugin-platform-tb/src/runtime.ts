@@ -13,4 +13,6 @@ Object.defineProperty(navigator, "userAgent", {
 });
 
 mergeReconciler(hostConfig);
-mergeInternalComponents(components);
+const internalComponents = mergeInternalComponents(components);
+delete internalComponents.Slider["block-size"];
+delete internalComponents.Slider["block-color"];
