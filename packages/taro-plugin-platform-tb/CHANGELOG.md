@@ -1,5 +1,12 @@
 # @tqtjs/taro-plugin-platform-tb
 
+## 0.0.2
+
+### Patch Changes
+
+- Updated dependencies [[`e5010cc`](https://github.com/Binbiubiubiu/tqt/commit/e5010cc99a0220bb735e5745f5183b9bab363e65)]:
+  - @tqtjs/shared@0.0.2
+
 ## 0.0.1
 
 ### Patch Changes
