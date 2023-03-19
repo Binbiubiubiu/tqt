@@ -21,6 +21,10 @@ export default class TBCI extends BaseCI {
   }
 
   async open() {
+    // @ts-ignore
+    const { printLog, processTypeEnum } = this.ctx.helper;
+    // @ts-ignore
+    printLog(processTypeEnum.START, "启动模拟器...", this.projectPath);
     this.runActions(() => {
       this.action("build", { sim: true });
     });
@@ -33,6 +37,9 @@ export default class TBCI extends BaseCI {
   }
 
   async upload() {
+    // @ts-ignore
+    const { printLog, processTypeEnum } = this.ctx.helper;
+    printLog(processTypeEnum.START, "上传代码到淘宝小程序后台");
     this.runActions(() => {
       this.action("upload");
     });

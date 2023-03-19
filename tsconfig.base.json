@@ -2,7 +2,7 @@
   "$schema": "http://json.schemastore.org/tsconfig",
   "compileOnSave": true,
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "es2015",
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "esModuleInterop": true,
