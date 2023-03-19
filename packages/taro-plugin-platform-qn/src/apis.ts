@@ -608,8 +608,4 @@ export function initNativeApi(taro) {
   promisefy(taro.qn, my.qn, {
     sfcApis: needPromiseQnApis,
   });
-
-  try {
-    taro.mpCloud = require("@tbmp/mp-cloud-sdk");
-  } catch (e) {}
 }

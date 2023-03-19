@@ -9,15 +9,16 @@
 /// <reference path="api/plugin.d.ts" />
 
 import Taro from "@tarojs/taro";
-import mpCloud from "@tbmp/mp-cloud-sdk";
 
 declare module "@tarojs/taro" {
+  interface TARO_ENV_TYPE {
+    [TaroGeneral.ENV_TYPE.QN]: TaroGeneral.ENV_TYPE.QN;
+  }
+
   interface qn {}
   interface TaroStatic {
     /** 获取基础库版本号 */
     SDKVersion: string;
-    /** 云端SDK */
-    mpCloud: typeof mpCloud;
 
     qn: qn;
     /**
@@ -28,5 +29,13 @@ declare module "@tarojs/taro" {
      * 取消原生全局事件监听
      */
     off(eventName: string, callback: (...args: Array<unknown>) => void): void;
+  }
+}
+
+declare global {
+  namespace TaroGeneral {
+    enum ENV_TYPE {
+      QN = "QN",
+    }
   }
 }
