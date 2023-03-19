@@ -62,6 +62,9 @@
   "peerDependenciesMeta": {
     "@types/react": {
       "optional": true
+    },
+    "@tarojs/service": {
+      "optional": true
     }
   }
 }

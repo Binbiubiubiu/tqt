@@ -40,5 +40,10 @@
   "devDependencies": {
     "@types/cross-spawn": "^6.0.2",
     "taobaodev": "^0.0.10"
+  },
+  "peerDependenciesMeta": {
+    "@tarojs/service": {
+      "optional": true
+    }
   }
 }
