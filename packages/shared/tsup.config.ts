@@ -2,7 +2,7 @@ import type { Options } from "tsup";
 import { defineConfig } from "tsup";
 
 const libConfig = <Options>{
-  entry: ["src/index.ts"],
+  entry: ["src/*.ts"],
   format: ["esm"],
   clean: true,
   sourcemap: true,

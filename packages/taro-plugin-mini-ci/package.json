@@ -1,0 +1,44 @@
+{
+  "name": "@tqtjs/taro-plugin-mini-ci",
+  "version": "0.0.0",
+  "description": "Taro 小程序端构建后支持CI（持续集成）的插件",
+  "author": "Binbiubiubiu <2632003786@qq.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "keywords": [
+    "Taro",
+    "CI/CD"
+  ],
+  "scripts": {
+    "build": "pnpm build:lib",
+    "build:lib": "tsup",
+    "dev": "pnpm build:lib --watch src"
+  },
+  "files": [
+    "index.js",
+    "dist",
+    "types"
+  ],
+  "peerDependencies": {
+    "@tarojs/service": "^3.6.2"
+  },
+  "repository": "git+https://github.com/Binbiubiubiu/tqt.git",
+  "bugs": {
+    "url": "https://github.com/Binbiubiubiu/tqt/issues"
+  },
+  "homepage": "https://github.com/Binbiubiubiu/tqt#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.3",
+    "minimist": "^1.2.5",
+    "@tarojs/plugin-mini-ci": "^3.6.2"
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.2",
+    "taobaodev": "^0.0.10"
+  }
+}

@@ -1,18 +1,28 @@
-export function promisefy(taro: any, global: any, sfcApis: Set<string>, cbApis?: Set<string>) {
+export interface PromisefyOptions {
+  sfcApis?: Set<string>;
+  cbApis?: Set<string>;
+}
+
+export function promisefy(taro: any, global: any, options: PromisefyOptions) {
+  const { sfcApis, cbApis } = options;
   Object.keys(global || {}).forEach((key) => {
     if (cbApis?.has(key)) {
       taro[key] = (options = {}, ...args: any[]) => {
         const obj = Object.assign({}, options);
         return new Promise((resolve) => {
-          const [cb] = args;
-          args[0] = (res: any) => {
-            cb?.(res);
-            resolve(res);
-          };
+          let [cb] = args;
+          if (typeof cb === "function") {
+            args[0] = (res: any) => {
+              cb?.(res);
+              resolve(res);
+            };
+          } else {
+            args[0] = resolve;
+          }
           global[key](obj, ...args);
         });
       };
-    } else if (sfcApis.has(key)) {
+    } else if (sfcApis?.has(key)) {
       taro[key] = (options = {}, ...args: any[]) => {
         const obj = Object.assign({}, options);
         if (typeof options === "string") {

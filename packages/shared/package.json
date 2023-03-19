@@ -1,6 +1,6 @@
 {
   "name": "@tqtjs/shared",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "type": "module",
   "description": "some tools",
   "author": "Binbiubiubiu <2632003786@qq.com>",
@@ -16,19 +16,27 @@
   "typesVersions": {
     "*": {
       "*": [
-        "./*"
+        "./dist/*"
       ]
     }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": "./dist/*"
   },
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch src"
+    "dev": "tsup --watch src",
+    "test": "uvu -r tsm __tests__",
+    "test:coverage": "c8 --include=src pnpm test",
+    "test:report": "c8 report --reporter=text-lcov > coverage.lcov"
   },
-  "dependencies": {},
-  "devDependencies": {},
   "repository": "git+https://github.com/Binbiubiubiu/tqtjs.git",
   "bugs": {
     "url": "https://github.com/Binbiubiubiu/tqtjs/issues"

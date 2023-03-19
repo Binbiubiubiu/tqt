@@ -19,6 +19,7 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
+*.lcov
 
 # nyc test coverage
 .nyc_output
@@ -76,3 +77,6 @@ common/autoinstallers/*/.npmrc
 
 # Turbo
 .turbo
+
+#vitepress
+doc/.vitepress/cache
