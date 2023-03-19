@@ -39,6 +39,7 @@
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@tarojs/components": "3.6.2",
+    "@tarojs/plugin-mini-ci": "3.6.2",
     "@tarojs/service": "3.6.2",
     "@tarojs/shared": "3.6.2",
     "@tarojs/taro": "3.6.2",
