@@ -1,5 +1,14 @@
 # @tqtjs/taro-plugin-platform-tb
 
+## 0.0.3
+
+### Patch Changes
+
+- [#5](https://github.com/Binbiubiubiu/tqt/pull/5) [`3fa05c0`](https://github.com/Binbiubiubiu/tqt/commit/3fa05c08dbb3e0cd73d48c10937a675a671fefa7) Thanks [@Binbiubiubiu](https://github.com/Binbiubiubiu)! - support es6
+
+- Updated dependencies [[`3fa05c0`](https://github.com/Binbiubiubiu/tqt/commit/3fa05c08dbb3e0cd73d48c10937a675a671fefa7)]:
+  - @tqtjs/shared@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes
