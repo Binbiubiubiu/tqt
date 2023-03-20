@@ -11,6 +11,7 @@ export const MouseableView = "mouseable-view";
 
 export const Table = "table";
 export const TableColumn = "table-column";
+export const ButtonGroup = "button-group";
 export const Menu = "menu";
 export const Divider = "divider";
 export const Item = "item";

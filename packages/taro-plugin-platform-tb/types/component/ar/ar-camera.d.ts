@@ -37,7 +37,7 @@ declare module "@tarojs/components" {
      */
     useCapturedImage?: boolean;
   }
-  namespace ArCameraProps {
+  export namespace ArCameraProps {
     interface Marker {
       /** marker图片链接 */
       url: string;

@@ -1,8 +1,8 @@
 declare module "@tarojs/components" {
   import { ComponentType } from "react";
-  import { FormItemProps as OldProps } from "@tarojs/components/types/common";
+  import { FormItemProps as OldProps, StandardProps } from "@tarojs/components/types/common";
 
-  interface FormItemProps extends OldProps {
+  interface FormItemProps extends OldProps, StandardProps {
     /**
      * label 标签的文本
      */

@@ -1,7 +1,7 @@
-import { IPluginContext } from "@tarojs/service";
+import type { IPluginContext } from "@tarojs/service";
 import minimist from "minimist";
 import path from "path";
-import { PluginOptions, validOptions } from "./options";
+import { type PluginOptions, validOptions } from "./options";
 import TBCI from "./TBCI";
 
 const enum EnumAction {

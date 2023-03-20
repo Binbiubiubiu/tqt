@@ -37,6 +37,9 @@ export const components = {
     warning: "false",
     disabled: "false",
   },
+  ButtonGroup: {
+    size: "medium",
+  },
   Checkbox: {
     checked: "",
     defaultChecked: "",
