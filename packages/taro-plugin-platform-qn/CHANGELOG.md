@@ -1,5 +1,16 @@
 # @tqtjs/taro-plugin-platform-qn
 
+## 0.0.4
+
+### Patch Changes
+
+- [#7](https://github.com/Binbiubiubiu/tqt/pull/7) [`3f15085`](https://github.com/Binbiubiubiu/tqt/commit/3f1508572c1332e883e46d7ff5ada05f43e4a4a6) Thanks [@Binbiubiubiu](https://github.com/Binbiubiubiu)! - add vue3 types
+
+- [#7](https://github.com/Binbiubiubiu/tqt/pull/7) [`3f15085`](https://github.com/Binbiubiubiu/tqt/commit/3f1508572c1332e883e46d7ff5ada05f43e4a4a6) Thanks [@Binbiubiubiu](https://github.com/Binbiubiubiu)! - support es6
+
+- Updated dependencies [[`3f15085`](https://github.com/Binbiubiubiu/tqt/commit/3f1508572c1332e883e46d7ff5ada05f43e4a4a6)]:
+  - @tqtjs/shared@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes
