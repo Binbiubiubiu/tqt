@@ -22,7 +22,3 @@
 /// <reference path="component/form/switch.d.ts" />
 /// <reference path="component/form/table.d.ts" />
 /// <reference path="component/form/textarea.d.ts" />
-
-declare module "@tarojs/components" {
-  export * from "@tarojs/components/types/index";
-}

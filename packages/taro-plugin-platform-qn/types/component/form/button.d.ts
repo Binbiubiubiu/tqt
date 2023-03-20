@@ -1,6 +1,7 @@
 declare module "@tarojs/components" {
   import { ComponentType } from "react";
   import { ButtonProps as OldProps } from "@tarojs/components/types/Button";
+  import { StandardProps } from "@tarojs/components/types/common";
   interface ButtonProps extends Omit<OldProps, "type" | "size"> {
     /**
      * 按钮的尺寸 可选值: 'small', 'medium', 'large'
@@ -67,4 +68,14 @@ declare module "@tarojs/components" {
     }
   }
   export const Button: ComponentType<ButtonProps>;
+
+  interface ButtonGroupProps extends StandardProps {
+    /**
+     * 按钮的尺寸 可选值: 'small', 'medium', 'large'
+     * @default 'medium'
+     */
+    size?: keyof FormProps.Size;
+  }
+
+  export const ButtonGroup: ComponentType<ButtonGroupProps>;
 }
