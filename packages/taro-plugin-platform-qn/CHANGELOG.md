@@ -1,5 +1,11 @@
 # @tqtjs/taro-plugin-platform-qn
 
+## 0.0.5
+
+### Patch Changes
+
+- [`06ea93f`](https://github.com/Binbiubiubiu/tqt/commit/06ea93f1a9c5c81eda5295dbbaac871cba01ed2d) Thanks [@Binbiubiubiu](https://github.com/Binbiubiubiu)! - fix types
+
 ## 0.0.4
 
 ### Patch Changes
