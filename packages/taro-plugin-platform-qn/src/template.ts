@@ -111,24 +111,24 @@ export class Template extends RecursiveTemplate {
       });
 
       return `
-        <block a:for="{{i.cn}}" a:key="uid">
-          <option a:if="{{item.nn==='${option.nn}'}}" ${this.buildAttribute2(
+        <block a:for="{{i.cn}}" a:key="uid" a:for-item="i">
+          <option a:if="{{i.nn==='${option.nn}'}}" ${this.buildAttribute2(
         option.attributes,
         "option",
-      )} id="{{item.uid || item.sid}}" data-sid="{{item.sid}}">
+      )} id="{{i.uid || i.sid}}" data-sid="{{i.sid}}">
             <block a:for="{{item.cn}}" a:key="sid">
               <template is="{{xs.e(0)}}" data="{{i:item}}" />
             </block>
           </option>
-          <option-group a:if="{{item.nn==='${optionGroup.nn}'}}" ${this.buildAttribute2(
+          <option-group a:if="{{i.nn==='${optionGroup.nn}'}}" ${this.buildAttribute2(
         optionGroup.attributes,
         "option-group",
-      )} id="{{item.uid || item.sid}}" data-sid="{{item.sid}}">
-            <block a:for="{{item.cn}}" a:key="sid">
-            <option a:if="{{item.nn==='${option.nn}'}}" ${this.buildAttribute2(
+      )} id="{{i.uid || i.sid}}" data-sid="{{item.sid}}" >
+            <block a:for="{{item.cn}}" a:key="sid" a:for-item="i">
+            <option a:if="{{i.nn==='${option.nn}'}}" ${this.buildAttribute2(
         option.attributes,
         "option",
-      )} id="{{item.uid || item.sid}}" data-sid="{{item.sid}}">
+      )} id="{{i.uid || i.sid}}" data-sid="{{i.sid}}">
                   <block a:for="{{item.cn}}" a:key="sid">
                     <template is="{{xs.e(0)}}" data="{{i:item}}" />
                   </block>
@@ -143,8 +143,8 @@ export class Template extends RecursiveTemplate {
     if (nodeName === "tab") {
       const attributes = this.miniComponents["tab-item"];
       return `
-      <block a:for="{{xs.fTab(i.cn)}}" a:key="sid">
-        <tab-item ${this.buildAttribute2(attributes, "tab-item")} id="{{item.uid||item.sid}}" data-sid="{{item.sid}}">
+      <block a:for="{{xs.fTab(i.cn)}}" a:key="sid" a:for-item="i">
+        <tab-item ${this.buildAttribute2(attributes, "tab-item")} id="{{i.uid||i.sid}}" data-sid="{{i.sid}}">
           <block a:for="{{item.cn}}" a:key="sid">
             <template is="{{xs.e(0)}}" data="{{i:item}}" />
           </block>
@@ -199,29 +199,23 @@ export class Template extends RecursiveTemplate {
           return `<template is="{{xs.e(0)}}" data="{{i:item}}" />`;
         }
         return `
-    <block a:for="{{${itemName}.cn}}" a:key="sid">
-      <item a:if="{{item.nn === '${item.nn}' }}" ${this.buildAttribute2(item.attributes, "item")} id="{{item.uid||item.sid}}" data-sid="{{item.sid}}">
+    <block a:for="{{${itemName}.cn}}" a:key="sid" a:for-item="i">
+      <item a:if="{{i.nn === '${item.nn}' }}" ${this.buildAttribute2(item.attributes, "item")} id="{{i.uid||i.sid}}" data-sid="{{i.sid}}">
           ${render(level - 1)}
       </item>
-      <sub-menu a:elif="{{item.nn === '${subMenu.nn}' }}" ${this.buildAttribute2(
+      <sub-menu a:elif="{{i.nn === '${subMenu.nn}' }}" ${this.buildAttribute2(
           item.attributes,
           "item",
-        )} id="{{item.uid||item.sid}}" data-sid="{{item.sid}}">
+        )} id="{{i.uid||i.sid}}" data-sid="{{i.sid}}">
           ${render(level - 1)}
       </sub-menu>
-      <group a:elif="{{item.nn === '${group.nn}' }}" ${this.buildAttribute2(
-          item.attributes,
-          "item",
-        )} id="{{item.uid||item.sid}}" data-sid="{{item.sid}}">
+      <group a:elif="{{i.nn === '${group.nn}' }}" ${this.buildAttribute2(item.attributes, "item")} id="{{i.uid||i.sid}}" data-sid="{{i.sid}}">
           ${render(level - 1)}
       </group>
-      <divider a:elif="{{item.nn === '${divider.nn}' }}" ${this.buildAttribute2(
+      <divider a:elif="{{i.nn === '${divider.nn}' }}" ${this.buildAttribute2(
           item.attributes,
           "item",
-        )} id="{{item.uid||item.sid}}" data-sid="{{item.sid}}"/>
-      <block a:else >
-        <template is="{{xs.e(0)}}" data="{{i:item}}" />
-      </block>
+        )} id="{{i.uid||i.sid}}" data-sid="{{i.sid}}"/>
     </block>
   `;
       };

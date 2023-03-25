@@ -108,38 +108,37 @@ declare global {
       "color-picker": ElementAttrs<TransformReact2VueType<ColorPickerProps>>;
       "mouseable-view": ElementAttrs<TransformReact2VueType<MouseableViewProps>>;
       overlay: ElementAttrs<TransformReact2VueType2<OverlayProps>>;
-      Progress: ElementAttrs<TransformReact2VueType2<ProgressProps>>;
+      progress: ElementAttrs<TransformReact2VueType2<ProgressProps>>;
       tab: ElementAttrs<TransformReact2VueType2<TabProps>>;
       "tab-item": ElementAttrs<TransformReact2VueType2<TabItemProps>>;
-      /** 表单 */
-      Button: ElementAttrs<TransformReact2VueType<ButtonProps>>;
-      ButtonGroup: ElementAttrs<TransformReact2VueType<ButtonGroupProps>>;
-      CheckboxGroup: ElementAttrs<TransformReact2VueType<CheckboxGroupProps>>;
-      Checkbox: ElementAttrs<TransformReact2VueType<CheckboxProps>>;
+      button: ElementAttrs<TransformReact2VueType<ButtonProps>>;
+      "button-group": ElementAttrs<TransformReact2VueType<ButtonGroupProps>>;
+      "checkbox-group": ElementAttrs<TransformReact2VueType<CheckboxGroupProps>>;
+      checkbox: ElementAttrs<TransformReact2VueType<CheckboxProps>>;
       "date-picker": ElementAttrs<TransformReact2VueType<DatePickerProps>>;
       "month-picker": ElementAttrs<TransformReact2VueType<MonthPickerProps>>;
       "year-picker": ElementAttrs<TransformReact2VueType<YearPickerProps>>;
       "range-picker": ElementAttrs<TransformReact2VueType<RangePickerProps>>;
       "form-item": ElementAttrs<TransformReact2VueType2<FormItemProps>>;
-      Form: ElementAttrs<TransformReact2VueType<FormProps>>;
-      Icon: ElementAttrs<TransformReact2VueType<IconProps>>;
-      Input: ElementAttrs<TransformReact2VueType<InputProps>>;
+      form: ElementAttrs<TransformReact2VueType<FormProps>>;
+      icon: ElementAttrs<TransformReact2VueType<IconProps>>;
+      input: ElementAttrs<TransformReact2VueType<InputProps>>;
       "menu-button": ElementAttrs<TransformReact2VueType<MenuButtonProps>>;
       item: ElementAttrs<TransformReact2VueType<ItemProps>>;
-      Menu: ElementAttrs<TransformReact2VueType<MenuProps>>;
+      menu: ElementAttrs<TransformReact2VueType<MenuProps>>;
       "sub-menu": ElementAttrs<TransformReact2VueType<SubMenuProps>>;
       group: ElementAttrs<TransformReact2VueType<GroupProps>>;
       divider: ElementAttrs<TransformReact2VueType<DividerProps>>;
       pagination: ElementAttrs<TransformReact2VueType<PaginationProps>>;
-      RadioGroup: ElementAttrs<TransformReact2VueType<RadioGroupProps>>;
-      Radio: ElementAttrs<TransformReact2VueType<RadioProps>>;
-      Select: ElementAttrs<TransformReact2VueType<SelectProps>>;
-      Option: ElementAttrs<TransformReact2VueType<OptionProps>>;
-      OptionGroup: ElementAttrs<TransformReact2VueType<OptionGroupProps>>;
-      Switch: ElementAttrs<TransformReact2VueType<SwitchProps>>;
-      Table: ElementAttrs<TransformReact2VueType<TableProps>>;
+      "radio-group": ElementAttrs<TransformReact2VueType<RadioGroupProps>>;
+      radio: ElementAttrs<TransformReact2VueType<RadioProps>>;
+      select: ElementAttrs<TransformReact2VueType<SelectProps>>;
+      option: ElementAttrs<TransformReact2VueType<OptionProps>>;
+      "option-group": ElementAttrs<TransformReact2VueType<OptionGroupProps>>;
+      switch: ElementAttrs<TransformReact2VueType<SwitchProps>>;
+      table: ElementAttrs<TransformReact2VueType<TableProps>>;
       "table-column": ElementAttrs<TransformReact2VueType<TableColumnProps>>;
-      Textarea: ElementAttrs<TransformReact2VueType<TextareaProps>>;
+      textarea: ElementAttrs<TransformReact2VueType<TextareaProps>>;
     }
   }
 }

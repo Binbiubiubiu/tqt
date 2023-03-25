@@ -10,7 +10,6 @@ import { Input } from "@tarojs/components";
   onChange={() => {}}
   onKeyDown={() => {}}
   disabled
-  // TODO: maxLength
   maxlength={100}
   hasLimitHint
   cutString

@@ -74,15 +74,22 @@ export default class QN extends TaroPlatformBase {
   modifyComponents() {
     const { internalComponents } = this.template;
     this.template.mergeComponents(this.ctx, components);
-    this.modifySlider(internalComponents.Slider);
+    this.modifyInput(internalComponents.Input);
+    this.modifyTextarea(internalComponents.Textarea);
   }
 
   /**
-   * 修改 Slider 组件属性
+   * 修改 Input 组件属性
    */
-  modifySlider(slider) {
-    delete slider["block-size"];
-    delete slider["block-color"];
+  modifyInput(input) {
+    input["maxLength"] = input["maxlength"];
+  }
+
+  /**
+   * 修改 TextArea 组件属性
+   */
+  modifyTextarea(textArea) {
+    textArea["maxLength"] = textArea["maxlength"];
   }
 
   /**
